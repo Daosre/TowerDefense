@@ -23,9 +23,6 @@ function createGroundLevelOne() {
     }
   }
 }
-// console.log(waterLevelOne);
-
-createGroundLevelOne();
 //function isClass(element, word) {
 //   return element.classList.contains(word);
 // }
