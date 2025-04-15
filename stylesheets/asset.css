@@ -1,0 +1,26 @@
+.water {
+  background-image: url("../assets/img/water.png");
+}
+.grass {
+  background-image: url("../assets/img/grass2.png");
+}
+.tree {
+  background-image: url("../assets/img/tree.png");
+  background-color: #768649;
+  backdrop-filter: blur(20px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.house {
+  background-image: url("../assets/img/house.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #768649;
+}
+.road {
+  background-image: url("../assets/img/road.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
