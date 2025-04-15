@@ -22,9 +22,10 @@ main {
   grid-template-rows: repeat(12, 50px);
 }
 .case {
-  background-image: url("../assets/img/grass.png");
-  background-size: cover;
+  background-image: url("../assets/img/texture1/grass.png");
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 #store {
   display: flex;
