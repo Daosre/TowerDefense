@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: gray;
+}
+#screenTitle {
+  display: none;
+}
+#game {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+#ground {
+  display: grid;
+  grid-template-columns: repeat(17, 50px);
+  grid-template-rows: repeat(12, 50px);
+}
+.case {
+  border: 1px solid black;
+}
+#store {
+  display: flex;
+  background-color: bisque;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  min-width: 10vw;
+  min-height: 100vh;
+  padding: 20px;
+}
+.articleTurret {
+  display: flex;
+  gap: 10px;
+}
+.price {
+  background-color: white;
+  border: 1px solid #212121;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 5px 5px #212121;
+}
