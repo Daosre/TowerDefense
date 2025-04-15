@@ -1,28 +1,10 @@
 //ceci est un quadrillage
-function addElement(array, word, caseName, elementCase) {
-  array.map((element) => {
-    if (caseName == element) {
-      elementCase.classList.add(word);
-    }
-  });
-}
-function createGroundLevelOne() {
-  //row
-  for (let x = 0; x < 12; x++) {
-    //collumn
-    for (let y = 1; y < 18; y++) {
-      let caseName = String.fromCharCode(97 + x) + y;
-      let addCase = document.createElement("div");
-      addCase.classList.add("case", `${caseName}`);
-      addElement(waterLevelOne, "water", caseName, addCase);
-      addElement(treeLevelOne, "tree", caseName, addCase);
-      addElement(houseLevelOne, "house", caseName, addCase);
-      addElement(roadLevelOne, "road", caseName, addCase);
-
-      ground.appendChild(addCase);
-    }
-  }
-}
+const mappingLevelOne = [
+  { array: waterLevelOne, word: "water" },
+  { array: treeLevelOne, word: "tree" },
+  { array: houseLevelOne, word: "house" },
+  { array: roadLevelOne, word: "road" },
+];
 //function isClass(element, word) {
 //   return element.classList.contains(word);
 // }

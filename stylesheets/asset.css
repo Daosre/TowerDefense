@@ -22,3 +22,14 @@
 .road {
   background-image: url("../assets/img/texture1/road.png");
 }
+.lava {
+  background-image: url("../assets/img/texture2/lava.png");
+}
+.rock {
+  background-image: url("../assets/img/textureObjet/rock.png");
+  background-color: #768649;
+  backdrop-filter: blur(20px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

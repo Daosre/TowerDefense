@@ -110,3 +110,10 @@ const roadLevelTwo = [
   "j16",
 ];
 const houseLevelTwo = ["j17"];
+
+const mappingLevelTwo = [
+  { array: lavaLevelTwo, word: "lava" },
+  { array: rockLevelTwo, word: "rock" },
+  { array: houseLevelTwo, word: "house" },
+  { array: roadLevelTwo, word: "road" },
+];
