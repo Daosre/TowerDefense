@@ -22,7 +22,9 @@ main {
   grid-template-rows: repeat(12, 50px);
 }
 .case {
-  border: 1px solid black;
+  background-image: url("../assets/img/grass.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 #store {
   display: flex;
