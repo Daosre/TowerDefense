@@ -125,3 +125,18 @@ const blockCase = [
 //     { array: houseLevelTwo, word: "house" },
 //     { array: blockCase, word: "road" },
 //   ]
+
+const roadMapMobLevelThree = [
+  { direction: "left", case: "c14" },
+  { direction: "bottom", case: "k14" },
+  { direction: "gauche", case: "k7" },
+  { direction: "top", case: "f7" },
+  { direction: "right", case: "f10" },
+  { direction: "bottom", case: "i10" },
+  { direction: "right", case: "i12" },
+  { direction: "top", case: "b12" },
+  { direction: "left", case: "b4" },
+  { direction: "bottom", case: "j4" },
+  { direction: "left", case: "j2" },
+  { direction: "top", case: "a2" },
+];

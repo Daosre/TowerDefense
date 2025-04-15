@@ -96,3 +96,13 @@ const roadLevelOne = [
   "j15",
 ];
 const houseLevelOne = ["f10"];
+const roadMapMobLevelOne = [
+  { direction: "right", case: "b5" },
+  { direction: "bottom", case: "g5" },
+  { direction: "left", case: "g2" },
+  { direction: "bottom", case: "j2" },
+  { direction: "right", case: "j15" },
+  { direction: "top", case: "b15" },
+  { direction: "left", case: "b10" },
+  { direction: "bottom", case: "f10" },
+];

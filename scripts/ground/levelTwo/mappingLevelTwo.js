@@ -117,3 +117,13 @@ const mappingLevelTwo = [
   { array: houseLevelTwo, word: "house" },
   { array: roadLevelTwo, word: "road" },
 ];
+const roadMapMobLevelTwo = [
+    { direction: "bottom", case: "j4" },
+    { direction: "right", case: "j8" },
+    { direction: "top", case: "c8" },
+    { direction: "right", case: "c16" },
+    { direction: "bottom", case: "g16" },
+    { direction: "left", case: "g11" },
+    { direction: "bottom", case: "j11" },
+    { direction: "right", case: "j16" },
+  ];

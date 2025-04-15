@@ -2,6 +2,8 @@ class Mob {
   constructor(health, speed) {
     this.health = health;
     this.speed = speed;
+    this.spawnLevel = ["b1", "a4", "c17"];
+    this.roadMapMobLevel = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
   }
 }
 
