@@ -5,7 +5,9 @@ class Ground {
   start = () => {
     createGroundLevelOne();
   };
-  
+  resetMap = ()=>{
+    
+  }
 }
 const terrain = new Ground();
 terrain.start();
