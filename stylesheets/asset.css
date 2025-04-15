@@ -21,6 +21,4 @@
 }
 .road {
   background-image: url("../assets/img/road.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
