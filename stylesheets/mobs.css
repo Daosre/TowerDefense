@@ -1,0 +1,15 @@
+.slime {
+  position: absolute;
+  top: 54px;
+  left: -40px;
+  height: 42px;
+  width: 32px;
+}
+
+.rotateRight {
+  transform: rotateY(180deg);
+}
+
+.moveTransition {
+  transition: left 2s ease-out, top 2s ease-out;
+}

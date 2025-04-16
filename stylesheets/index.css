@@ -4,19 +4,20 @@
   box-sizing: border-box;
 }
 main {
+  position: relative;
   width: 100vw;
   min-height: 100vh;
   background-color: gray;
 }
-#screenTitle {
+/* #screenTitle {
   display: none;
-}
+} */
 #game {
-  position: relative;
   display: flex;
   justify-content: space-between;
 }
 #ground {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(17, 50px);
   grid-template-rows: repeat(12, 50px);
