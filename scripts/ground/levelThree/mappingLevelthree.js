@@ -125,6 +125,7 @@ const blockCase = [
 //     { array: houseLevelTwo, word: "house" },
 //     { array: blockCase, word: "road" },
 //   ]
+const assetFreeCaseLevelThree = ["grass", "grass2", "grass3", "grass4"];
 
 const roadMapMobLevelThree = [
   { direction: "left", case: "c14" },

@@ -96,6 +96,7 @@ const roadLevelOne = [
   "j15",
 ];
 const houseLevelOne = ["f10"];
+const assetFreeCaseLevelOne = ["grass", "grass2"];
 const roadMapMobLevelOne = [
   { direction: "right", case: "b5" },
   { direction: "bottom", case: "g5" },

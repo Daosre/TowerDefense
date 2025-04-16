@@ -18,10 +18,14 @@ class Game {
   };
   loseLife = () => {
     this.life--;
-    if (this.life === 0) {
-      //gameOver
+    if (this.life >= 0) {
+      this.gameOver();
     }
   };
+  gameOver = () => {
+    console.log(this.life, "restant");
+    console.log("Ta gueule rémy ta perdu!");
+  };
 }
-const startGame = new Game(5, 0);
+const startGame = new Game(1, 0);
 startGame.init();

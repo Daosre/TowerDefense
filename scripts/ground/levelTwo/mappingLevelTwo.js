@@ -17,7 +17,6 @@ const lavaLevelTwo = [
   "b6",
   "c1",
   "c6",
-  "c15",
   "d1",
   "d9",
   "d15",
@@ -110,20 +109,21 @@ const roadLevelTwo = [
   "j16",
 ];
 const houseLevelTwo = ["j17"];
-
+const assetFreeCaseLevelTwo = ["grass3", "grass4"];
 const mappingLevelTwo = [
   { array: lavaLevelTwo, word: "lava" },
   { array: rockLevelTwo, word: "rock" },
+  { array: treeLevelTwo, word: "tree2" },
   { array: houseLevelTwo, word: "house" },
-  { array: roadLevelTwo, word: "road" },
+  { array: roadLevelTwo, word: "road2" },
 ];
 const roadMapMobLevelTwo = [
-    { direction: "bottom", case: "j4" },
-    { direction: "right", case: "j8" },
-    { direction: "top", case: "c8" },
-    { direction: "right", case: "c16" },
-    { direction: "bottom", case: "g16" },
-    { direction: "left", case: "g11" },
-    { direction: "bottom", case: "j11" },
-    { direction: "right", case: "j16" },
-  ];
+  { direction: "bottom", case: "j4" },
+  { direction: "right", case: "j8" },
+  { direction: "top", case: "c8" },
+  { direction: "right", case: "c16" },
+  { direction: "bottom", case: "g16" },
+  { direction: "left", case: "g11" },
+  { direction: "bottom", case: "j11" },
+  { direction: "right", case: "j16" },
+];

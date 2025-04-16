@@ -1,9 +1,15 @@
 function addClassByElement(array, word, caseName, elementCase) {
+  let isFree = true;
   array.map((element) => {
-    if (caseName == element) {
+    if (caseName === element) {
+      let imageElement = document.createElement("div");
+      imageElement.classList.add(`${word}Image`);
+      elementCase.appendChild(imageElement);
       elementCase.classList.add(word);
+      isFree = false;
     }
   });
+  return isFree;
 }
 class Ground extends Game {
   constructor(level) {
@@ -12,6 +18,7 @@ class Ground extends Game {
     this.ground = document.querySelector("#ground");
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
+    this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.assetSlime = "assets/img/mobs/slime/bruno.gif";
     this.nameSlime = "slime";
@@ -22,9 +29,6 @@ class Ground extends Game {
   }
   start = () => {
     this.createGround(this.mappingLevel[this.level]);
-    // let positionStart = document.querySelector(`.${this.spawnLevel[this.level]}`);
-    // let positionOSEF = positionStart.getBoundingClientRect();
-    // let test = positionStart.clientHeight;
     const roadMob = this.pathMob();
     const mobRemy = new Mob(
       10,
@@ -69,13 +73,29 @@ class Ground extends Game {
         let addCase = document.createElement("div");
         //add classes
         addCase.classList.add("case", `${caseName}`);
-
+        let isFreeCase = true;
         mapping.map((element) => {
-          addClassByElement(element.array, element.word, caseName, addCase);
+          if (isFreeCase) {
+            isFreeCase = addClassByElement(element.array, element.word, caseName, addCase);
+          }
         });
+        if (isFreeCase) {
+          let grassAsset = this.randomGrass();
+          addCase.classList.add(grassAsset);
+          addCase.addEventListener("click", () => {
+            const previousSelected = document.querySelector("#selected");
+            if (previousSelected) {
+              previousSelected.id = "";
+            }
+            addCase.id = "selected";
+          });
+        }
         ground.appendChild(addCase);
       }
     }
   };
+  randomGrass = () => {
+    let randomNbr = Math.round(Math.random() * (this.freeCaseImage[this.level].length - 1 - 0) + 0);
+    return this.freeCaseImage[this.level][randomNbr];
+  };
 }
-// blueSlime

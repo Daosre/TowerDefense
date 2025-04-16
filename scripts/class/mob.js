@@ -66,11 +66,11 @@ class Mob extends Ground {
       }
       if (indexRoadMapMob >= this.roadMapMob.length) {
         clearInterval(moveInterval);
-        positionMob.src = "bombe";
+        positionMob.src = "assets/img/textureObjet/bomba.gif";
         setTimeout(() => {
           positionMob.remove();
           startGame.loseLife();
-        }, 500);
+        }, 400);
         // changement explosion
         //disparition 0.5/1 sec plus tard
       }
