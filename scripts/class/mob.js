@@ -1,6 +1,7 @@
 class Mob extends Ground {
-  constructor(health, speed, asset, spawnPlace, name, index, roadMapMob) {
+  constructor(health, speed, money, asset, spawnPlace, name, index, roadMapMob) {
     super(ground);
+    this.money = money;
     this.index = index;
     this.name = name;
     this.spawnPlace = spawnPlace;
@@ -10,7 +11,7 @@ class Mob extends Ground {
     this.asset = asset;
     this.start = document.querySelector(`.${this.spawnPlace}`);
     this.createSlime = document.createElement("img");
-    this.mobEntity = document.querySelector(`.${this.name}${this.index}`);
+    // this.mobEntity = document.querySelector(`.${name}${index}`);
     this.valueMooveX = this.start.getBoundingClientRect().width;
     this.valueMooveY = this.start.getBoundingClientRect().height;
     this.positionStartX = 0;
@@ -32,8 +33,7 @@ class Mob extends Ground {
 
     this.positionMob = document.querySelector(`.${this.name}${this.index}`);
     this.boundingMob = this.positionMob.getBoundingClientRect();
-    console.log(this.boundingMob);
-    console.log(this.boundingMob.top, this.boundingMob.height);
+
     switch (this.roadMapMob[0].direction) {
       case "right":
         this.positionMob.style.top =
@@ -72,10 +72,6 @@ class Mob extends Ground {
           }
           break;
         case "bottom":
-          console.log(
-            this.positionStartY + this.valueMooveY,
-            this.roadMapMob[indexRoadMapMob].element.top
-          );
           if (
             this.positionStartY + this.valueMooveY <
             this.roadMapMob[indexRoadMapMob].element.top
@@ -111,16 +107,18 @@ class Mob extends Ground {
       }
       if (indexRoadMapMob >= this.roadMapMob.length) {
         clearInterval(this.intervalMovemoveInterval);
-        this.positionMob.src = "assets/img/textureObjet/bomba.gif";
+        this.death();
         setTimeout(() => {
-          this.death();
           startGame.loseLife();
         }, 400);
       }
     }, 1000);
   };
   death = () => {
-    this.positionMob.remove();
-    clearInterval(this.intervalMove);
+    this.positionMob.src = "assets/img/textureObjet/bomba.gif";
+    setTimeout(() => {
+      this.positionMob.remove();
+      clearInterval(this.intervalMove);
+    }, 400);
   };
 }

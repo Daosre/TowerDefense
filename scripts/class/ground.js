@@ -16,15 +16,7 @@ class Ground extends Game {
     super(level);
     this.level = level;
     this.ground = document.querySelector("#ground");
-    this.spawnLevel = ["b1", "a4", "c17"];
-    this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
     this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
-    this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
-    this.assetSlime = "assets/img/mobs/slime/bruno.gif";
-    this.nameSlime = "slime";
-    this.nameBat = "bat";
-    this.nameDrake = "drake";
-    this.mobExist = [];
     this.reset = document.querySelector("#next");
   }
   init = () => {
@@ -33,42 +25,9 @@ class Ground extends Game {
       this.nextLevel();
     });
   };
-  start = () => {
-    this.createGround(this.mappingLevel[this.level]);
-    const mobRemy = new Mob(
-      10,
-      1,
-      this.assetSlime,
-      this.spawnLevel[this.level],
-      this.nameSlime,
-      1,
-      this.pathMob()
-    );
-    this.mobExist.push(mobRemy);
-    mobRemy.spawn();
-  };
-  spawnMob = () => {};
-  pathMob = () => {
-    const arrayMob = [];
-    this.roadMapMob[this.level].map((element) => {
-      arrayMob.push({
-        element: document.querySelector(`.${element.case}`).getBoundingClientRect(),
-        direction: element.direction,
-      });
-    });
-    return arrayMob;
-  };
   resetMap = () => {
     this.ground.replaceChildren();
   };
-  nextLevel() {
-    this.level++;
-    this.mobExist.map((mob) => {
-      mob.death();
-    });
-    this.mobExist = [];
-    this.start();
-  }
   createGround = (mapping) => {
     //row
     for (let x = 0; x < 12; x++) {
