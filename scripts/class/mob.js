@@ -33,7 +33,6 @@ class Mob extends Ground {
 
     this.positionMob = document.querySelector(`.${this.name}${this.index}`);
     this.boundingMob = this.positionMob.getBoundingClientRect();
-
     switch (this.roadMapMob[0].direction) {
       case "right":
         this.positionMob.style.top =
