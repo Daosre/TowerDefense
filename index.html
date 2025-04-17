@@ -7,37 +7,79 @@
     <link rel="stylesheet" href="stylesheets/index.css" />
     <link rel="stylesheet" href="stylesheets/asset.css" />
     <link rel="stylesheet" href="stylesheets/mobs.css" />
+    <link rel="stylesheet" href="stylesheets/page.css" />
+    <link rel="stylesheet" href="stylesheets/store.css">
   </head>
   <body>
     <header></header>
     <main>
-      <article id="screenTitle">
-        <h1>Title</h1>
-        <button id="start">Start</button>
-      </article>
+      <section id="multiple_Page">
+        <section class="start">
+          <h1>The Last Bastion</h1>
+          <section class="button_Container">
+            <button>Easy</button>
+            <button>Normal</button>
+            <button>Hard</button>
+          </section>
+          <button id="start" class="btnStart">Start</button>
+        </section>
+        <section id="victory">
+          <article class="victory_container">
+            <p>Victory</p>
+            <button>Next Level</button>
+          </article>
+        </section>
+        <section id="looser">
+          <h1>Fail</h1>
+          <p>Retry</p>
+        </section>
+        <section id="ending">
+          <article>
+            <p>GG</p>
+            <p>You are the best !</p>
+          </article>
+          <button class="home" onclick="">Home</button>
+        </section>
+      </section>
+
       <article id="game">
         <section id="ground"></section>
         <section id="store">
-          <h2>Boutique</h2>
+          <article class="life_Container">
+            <img src="assets/img/heart/Heart.png" alt="Life Player" />
+            <p>5</p>
+          </article>
+          <h2 class="title_Store">Boutique</h2>
+          <article class="money_Container">
+            <p>9999999</p>
+            <img src="assets/img/textureObjet/money.png" alt="">
+          </article>
           <article class="articleTurret">
-            <img src="" alt="image of turret" />
+            <img
+              src="assets/img/Tower/Arrow/TowerArrow1.png"
+              alt="image of turret"
+            />
             <button class="price">50</button>
           </article>
           <article class="articleTurret">
-            <img src="" alt="image of turret" />
+            <img
+              src="assets/img/Tower/Elect/towelect1.png"
+              alt="image of turret"
+            />
             <button class="price">50</button>
           </article>
           <article class="articleTurret">
-            <img src="" alt="image of turret" />
+            <img
+              src="assets/img/Tower/Mage/TowerMage1.png"
+              alt="image of turret"
+            />
             <button class="price">50</button>
           </article>
 
-          <p>monney : 0</p>
           <p id="next">next level</p>
         </section>
       </article>
     </main>
-    <img src="assets/img/textureObjet/bomba.gif" />
     <footer></footer>
   </body>
   <script src="scripts/index.js"></script>
@@ -46,7 +88,6 @@
   <script src="scripts/ground/levelThree/mappingLevelthree.js"></script>
   <script src="scripts/ground/levelOne/groundOne.js"></script>
   <script src="scripts/class/tower.js"></script>
-
   <script src="scripts/class/game.js"></script>
   <script src="scripts/class/ground.js"></script>
   <script src="scripts/class/mob.js"></script>
