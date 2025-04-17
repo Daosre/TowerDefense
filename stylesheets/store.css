@@ -16,10 +16,17 @@
   .price {
     background-color: #cdd7d6;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    gap: 5px;
     width: 100px;
     height: 60px;
     box-shadow: 0 0 2px 2px #21212150;
+    img {
+      width: 32px;
+    }
   }
 }
 .money_Container {
@@ -53,6 +60,7 @@
 .articleTurret {
   display: flex;
   gap: 10px;
+  align-items: center;
   img {
     object-fit: contain;
     width: 100px;

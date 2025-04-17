@@ -32,8 +32,6 @@ class Mob extends Ground {
 
     this.positionMob = document.querySelector(`.${this.name}${this.index}`);
     this.boundingMob = this.positionMob.getBoundingClientRect();
-    console.log(this.boundingMob);
-    console.log(this.boundingMob.top, this.boundingMob.height);
     switch (this.roadMapMob[0].direction) {
       case "right":
         this.positionMob.style.top =
@@ -72,10 +70,6 @@ class Mob extends Ground {
           }
           break;
         case "bottom":
-          console.log(
-            this.positionStartY + this.valueMooveY,
-            this.roadMapMob[indexRoadMapMob].element.top
-          );
           if (
             this.positionStartY + this.valueMooveY <
             this.roadMapMob[indexRoadMapMob].element.top
