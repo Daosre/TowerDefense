@@ -125,5 +125,5 @@ const roadMapMobLevelTwo = [
   { direction: "bottom", case: "g16" },
   { direction: "left", case: "g11" },
   { direction: "bottom", case: "j11" },
-  { direction: "right", case: "j16" },
+  { direction: "right", case: "j17" },
 ];

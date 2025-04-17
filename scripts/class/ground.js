@@ -24,12 +24,17 @@ class Ground extends Game {
     this.nameSlime = "slime";
     this.nameBat = "bat";
     this.nameDrake = "drake";
-    // temporaire
+    this.mobExist = [];
     this.reset = document.querySelector("#next");
   }
+  init = () => {
+    this.reset.addEventListener("click", () => {
+      this.resetMap();
+      this.nextLevel();
+    });
+  };
   start = () => {
     this.createGround(this.mappingLevel[this.level]);
-    const roadMob = this.pathMob();
     const mobRemy = new Mob(
       10,
       1,
@@ -37,13 +42,12 @@ class Ground extends Game {
       this.spawnLevel[this.level],
       this.nameSlime,
       1,
-      roadMob
+      this.pathMob()
     );
+    this.mobExist.push(mobRemy);
     mobRemy.spawn();
-    this.reset.addEventListener("click", () => {
-      this.resetMap();
-    });
   };
+  spawnMob = () => {};
   pathMob = () => {
     const arrayMob = [];
     this.roadMapMob[this.level].map((element) => {
@@ -56,11 +60,14 @@ class Ground extends Game {
   };
   resetMap = () => {
     this.ground.replaceChildren();
-    this.nextLevel();
   };
   nextLevel() {
     this.level++;
-    this.createGround(this.mappingLevel[this.level]);
+    this.mobExist.map((mob) => {
+      mob.death();
+    });
+    this.mobExist = [];
+    this.start();
   }
   createGround = (mapping) => {
     //row

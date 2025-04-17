@@ -14,6 +14,7 @@ class Game {
   };
   start = () => {
     const terrain = new Ground(this.level);
+    terrain.init();
     terrain.start();
   };
   loseLife = () => {
@@ -22,10 +23,7 @@ class Game {
       this.gameOver();
     }
   };
-  gameOver = () => {
-    console.log(this.life, "restant");
-    console.log("Ta gueule rémy ta perdu!");
-  };
+  gameOver = () => {};
 }
 const startGame = new Game(1, 0);
 startGame.init();
