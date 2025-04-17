@@ -91,24 +91,8 @@ class Game {
         );
         this.mobExist.push(bruno);
         bruno.spawn();
-      }, 2000 * i + delay);
+      }, 2000 * i);
     }
-    const waveInterval = setInterval(() => {
-      nbrMob++;
-      if (nbrMob >= 20) {
-        clearInterval(waveInterval);
-      }
-
-      const bruno = new Mob(
-        10,
-        1,
-        this.assetBlueSlime,
-        this.spawnLevel[this.level],
-        this.nameSlime,
-        1,
-        this.pathMob()
-      );
-    }, 2000);
   };
   pathMob = () => {
     const arrayMob = [];
