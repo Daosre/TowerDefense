@@ -1,13 +1,16 @@
-class Store {
-  constructor(tower, money) {
-    this.selected = document.querySelector("#selected");
+class Store extends Game {
+  constructor(money) {
+    super(money);
+    this.caseSelected;
     this.towerContainer = document.createElement("article");
-    this.btnBuy = document.createElement("button");
     this.storeTower = document.createElement("img");
-    this.tower = tower;
-    this.money = money;
+    this.money = 100;
+    this.turretOneBtn = document.querySelector("#t1");
+    this.turretTwoBtn = document.querySelector("#t2");
+    this.turretThreeBtn = document.querySelector("#t3");
   }
-  selected = () => {};
+  caseSelected = () => {
+    console.log("tu as cliqué sur une casse");
+  };
 }
-let plop = new Store(0, 0);
 // plop.selected();

@@ -1,9 +1,9 @@
 class Game {
-  constructor(life, monney) {
-    this.life = life;
+  constructor() {
+    this.life;
     this.isPlayed = false;
     this.hearth = document.querySelector("#heartNbr");
-    this.monney = monney;
+    this.money = 100;
     this.screenTitle = document.querySelector("#screenTitle");
     this.easyButton = document.querySelector("#easy");
     this.normalButton = document.querySelector("#normal");
@@ -26,6 +26,7 @@ class Game {
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mobExist = [];
+    this.store;
   }
   init = () => {
     const initGame = (nbr) => {
@@ -52,7 +53,8 @@ class Game {
     });
   };
   start = () => {
-    const terrain = new Ground(this.level);
+    this.store = new Store(this.store);
+    const terrain = new Ground(this.level, this.store);
     terrain.init();
     terrain.createGround(this.mappingLevel[this.level]);
     this.spawnWave();
@@ -106,6 +108,6 @@ class Game {
   };
 }
 
-const startGame = new Game(1, 0);
+const startGame = new Game(1);
 
 startGame.init();

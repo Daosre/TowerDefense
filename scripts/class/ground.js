@@ -12,8 +12,9 @@ function addClassByElement(array, word, caseName, elementCase) {
   return isFree;
 }
 class Ground extends Game {
-  constructor(level) {
-    super(level);
+  constructor(level, store) {
+    super(level, store);
+    this.store = store;
     this.level = level;
     this.ground = document.querySelector("#ground");
     this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
@@ -54,6 +55,7 @@ class Ground extends Game {
               previousSelected.id = "";
             }
             addCase.id = "selected";
+            this.store.caseSelected();
           });
         }
         ground.appendChild(addCase);
