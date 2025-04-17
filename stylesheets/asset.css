@@ -16,14 +16,14 @@
 }
 .house {
   /*Temporaire changer par le background image du sol pour le chateau uniquement*/
-  background-image: url("../assets/img/textureObjet/house.png");
+  background-image: url("../assets/img/textureObjet/castle.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #768649;
 }
 .houseImage {
-  background-image: url("../assets/img/textureObjet/house.png");
+  background-image: url("../assets/img/textureObjet/castle.png");
   background-repeat: no-repeat;
   background-position: center;
 }
