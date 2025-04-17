@@ -1,15 +1,15 @@
 .water {
   background-image: url("../assets/img/texture1/water_128px.gif");
 }
-
 .tree {
-  background-image: url("../assets/img/texture1/grass.png");
+  background-image: url("../assets/img/texture1/grassT.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .treeImage {
   background-image: url("../assets/img/textureObjet/tree.png");
+  /* image-shadow: 2px 0px 1px #222; */
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
@@ -28,7 +28,7 @@
   background-position: center;
 }
 .road {
-  background-image: url("../assets/img/texture1/road.png");
+  background-image: url("../assets/img/texture1/road3.png");
 }
 .road2 {
   background-image: url("../assets/img/texture2/road.png");
@@ -36,7 +36,6 @@
 .lava {
   background-image: url("../assets/img/texture2/lava.png");
 }
-
 .rock {
   background-image: url("../assets/img/texture2/grass.png");
   background-size: contain;
@@ -63,10 +62,10 @@
   height: 100%;
 }
 .grass {
-  background-image: url("../assets/img/texture1/grass.png");
+  background-image: url("../assets/img/texture1/grass3.png");
 }
 .grass2 {
-  background-image: url("../assets/img/texture1/grass2.png");
+  background-image: url("../assets/img/texture1/grassT.png");
 }
 .grass3 {
   background-image: url("../assets/img/texture2/grass.png");
