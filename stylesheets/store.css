@@ -1,6 +1,6 @@
 #store {
   display: flex;
-  background-image: url(../assets/img/store/Brick_03.png);
+  background-image: url(../assets/img/store/brick.png);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
