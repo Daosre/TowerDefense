@@ -4,8 +4,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-width: 15vw;
+  min-width: 30vw;
   min-height: 100vh;
+  box-shadow: 0 0 10px 50px rgba(128, 128, 128, 0.2);
   h2 {
     font-size: 42px;
     text-shadow: 0 0 15px black;

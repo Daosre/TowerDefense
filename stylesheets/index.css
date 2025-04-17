@@ -9,7 +9,7 @@ main {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #fae8eb;
+  background-color: white;
 }
 /* #screenTitle {
   display: none;
@@ -23,8 +23,7 @@ main {
   display: grid;
   grid-template-columns: repeat(17, 50px);
   grid-template-rows: repeat(12, 50px);
-  border-right: 2px solid red;
-  border-bottom: 2px solid red;
+  box-shadow: 0 0 10px 50px rgba(128, 128, 128, 0.2);
 }
 .case {
   background-image: url("../assets/img/texture1/grass.png");
