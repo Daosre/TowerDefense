@@ -19,14 +19,23 @@ class Game {
         "assets/img/mobs/slime/redSlime.gif",
         "assets/img/mobs/slime/yellowSlime.gif",
       ],
-      [],
-      [],
+      ["assets/img/mobs/bat/bruceDown.gif"],
+      [
+        "assets/img/mobs/dragon/moderDown.gif",
+        "assets/img/mobs/dragon/moderLeft.gif",
+        "assets/img/mobs/dragon/moderUp.gif",
+      ],
+      ["assets/img/mobs/slime/pouleto.gif"],
     ];
     this.nameSlime = "slime";
     this.nameBat = "bat";
     this.nameDrake = "drake";
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
-    this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
+    this.roadMapMob = [
+      roadMapMobLevelOne,
+      roadMapMobLevelTwo,
+      roadMapMobLevelThree,
+    ];
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mobExist = [];
     this.store;
@@ -106,7 +115,9 @@ class Game {
     const arrayMob = [];
     this.roadMapMob[this.level].map((element) => {
       arrayMob.push({
-        element: document.querySelector(`.${element.case}`).getBoundingClientRect(),
+        element: document
+          .querySelector(`.${element.case}`)
+          .getBoundingClientRect(),
         direction: element.direction,
       });
     });
