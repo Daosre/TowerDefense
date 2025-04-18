@@ -48,47 +48,40 @@ class Store extends Game {
     this.articleTurretThree.style.display = "none";
   };
   addTurret = (nbr) => {
-    console.log(this.caseSelected.classList);
-    // switch(this.caseSelected.classList){
-    //   case "":
-    switch (nbr) {
-      case 0:
-        if (this.money >= 10) {
-          this.caseSelected.classList.add("turret", "arrow1");
-          const imgTurret = document.createElement("div");
-          imgTurret.classList.add("assetArrow1");
-          this.caseSelected.appendChild(imgTurret);
-          this.money -= 10;
-          this.wallet.innerText = this.money;
-          this.hiddenTurretLevelOne();
-        }
-        break;
-      case 1:
-        if (this.money >= 20) {
-          this.caseSelected.classList.add("turret", "elec1");
-          const imgTurret = document.createElement("div");
-          imgTurret.classList.add("assetElec1");
-          this.caseSelected.appendChild(imgTurret);
-          this.money -= 20;
-          this.wallet.innerText = this.money;
-          this.hiddenTurretLevelOne();
-        }
-        break;
-      case 2:
-        if (this.money >= 50) {
-          this.caseSelected.classList.add("turret", "mage1");
-          const imgTurret = document.createElement("div");
-          imgTurret.classList.add("assetMage1");
-          this.caseSelected.appendChild(imgTurret);
-          this.money -= 50;
-          this.wallet.innerText = this.money;
-          this.hiddenTurretLevelOne();
-        }
-        break;
-      default:
-        console.log("probleme de pauvre");
-        break;
-      // }
+    if (!this.caseSelected.classList.contains("turret")) {
+      switch (nbr) {
+        case 0:
+          if (this.money >= 10) {
+            const turret = new Tower(1, 30, "assetArrow1", this.caseSelected);
+            turret.create();
+            this.money -= 10;
+            this.wallet.innerText = this.money;
+            this.hiddenTurretLevelOne();
+          }
+          break;
+        case 1:
+          if (this.money >= 20) {
+            const turret = new Tower(5, 50, "assetElec1", this.caseSelected);
+            turret.create();
+            this.money -= 20;
+            this.wallet.innerText = this.money;
+            this.hiddenTurretLevelOne();
+          }
+          break;
+        case 2:
+          if (this.money >= 50) {
+            const turret = new Tower(10, 70, "assetMage1", this.caseSelected);
+            turret.create();
+            this.money -= 50;
+            this.wallet.innerText = this.money;
+            this.hiddenTurretLevelOne();
+          }
+          break;
+        default:
+          console.log("probleme de pauvre");
+          break;
+        // }
+      }
     }
   };
 }
