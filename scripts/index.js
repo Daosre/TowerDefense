@@ -6,7 +6,6 @@
 // const btnStart = document.querySelector(".btnStart");
 const multiPage = document.querySelector("#multiple_Page");
 const titleStore = document.querySelector(".title_Store");
-
 // btnStart.addEventListener("click", () => {
 //   multiPage.classList.add("transition_Page");
 //   setTimeout(() => {

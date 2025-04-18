@@ -21,10 +21,10 @@ class Ground extends Game {
     this.reset = document.querySelector("#next");
   }
   init = () => {
-    this.reset.addEventListener("click", () => {
-      this.resetMap();
-      this.nextLevel();
-    });
+    // this.reset.addEventListener("click", () => {
+    //   this.resetMap();
+    //   this.nextLevel();
+    // });
   };
   resetMap = () => {
     this.ground.replaceChildren();
