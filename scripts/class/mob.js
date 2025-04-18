@@ -108,7 +108,7 @@ class Mob extends Ground {
           startGame.loseLife();
         }, 400);
       }
-    }, 100);
+    }, 1000);
   };
   death = () => {
     this.positionMob.src = "assets/img/textureObjet/bomba.gif";
