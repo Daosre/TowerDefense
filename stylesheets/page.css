@@ -106,6 +106,7 @@
   background-image: url(../assets/img/fond/crownbroken.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  display: none;
   width: 100vw;
   height: 100vh;
   justify-content: center;
