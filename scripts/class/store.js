@@ -48,6 +48,9 @@ class Store extends Game {
     this.articleTurretThree.style.display = "none";
   };
   addTurret = (nbr) => {
+    console.log(this.caseSelected.classList);
+    // switch(this.caseSelected.classList){
+    //   case "":
     switch (nbr) {
       case 0:
         if (this.money >= 10) {
@@ -57,6 +60,7 @@ class Store extends Game {
           this.caseSelected.appendChild(imgTurret);
           this.money -= 10;
           this.wallet.innerText = this.money;
+          this.hiddenTurretLevelOne();
         }
         break;
       case 1:
@@ -67,6 +71,7 @@ class Store extends Game {
           this.caseSelected.appendChild(imgTurret);
           this.money -= 20;
           this.wallet.innerText = this.money;
+          this.hiddenTurretLevelOne();
         }
         break;
       case 2:
@@ -75,13 +80,15 @@ class Store extends Game {
           const imgTurret = document.createElement("div");
           imgTurret.classList.add("assetMage1");
           this.caseSelected.appendChild(imgTurret);
-          this.money -= 20;
+          this.money -= 50;
           this.wallet.innerText = this.money;
+          this.hiddenTurretLevelOne();
         }
         break;
       default:
         console.log("probleme de pauvre");
         break;
+      // }
     }
   };
 }
