@@ -20,12 +20,13 @@ class Game {
         "assets/img/mobs/slime/yellowSlime.gif",
       ],
       ["assets/img/mobs/bat/bruceDown.gif"],
-      [
-        "assets/img/mobs/dragon/moderDown.gif",
-        "assets/img/mobs/dragon/moderLeft.gif",
-        "assets/img/mobs/dragon/moderUp.gif",
-      ],
+      ["assets/img/mobs/dragon/moderLeft.gif"],
       ["assets/img/mobs/slime/pouleto.gif"],
+    ];
+    this.assetProjectiles = [
+      ["assets/img/projectile/projectileArrow.png"],
+      ["assets/img/projectile/projectileElec.png"],
+      ["assets/img/projectile/projectileMage.png"],
     ];
     this.nameSlime = "slime";
     this.nameBat = "bat";
