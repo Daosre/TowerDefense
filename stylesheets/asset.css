@@ -74,5 +74,5 @@
   background-image: url("../assets/img/texture2/grass2.png");
 }
 #selected {
-  border: 1px solid yellow;
+  border: 2px solid yellow;
 }

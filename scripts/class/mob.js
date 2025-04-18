@@ -11,7 +11,6 @@ class Mob extends Ground {
     this.asset = asset;
     this.start = document.querySelector(`.${this.spawnPlace}`);
     this.createSlime = document.createElement("img");
-    // this.mobEntity = document.querySelector(`.${name}${index}`);
     this.valueMooveX = this.start.getBoundingClientRect().width;
     this.valueMooveY = this.start.getBoundingClientRect().height;
     this.positionStartX = 0;
@@ -30,7 +29,6 @@ class Mob extends Ground {
   };
   initPosition = () => {
     // initialialiser les position etc
-
     this.positionMob = document.querySelector(`.${this.name}${this.index}`);
     this.boundingMob = this.positionMob.getBoundingClientRect();
     switch (this.roadMapMob[0].direction) {
@@ -59,7 +57,6 @@ class Mob extends Ground {
     let indexRoadMapMob = 0;
     this.intervalMove = setInterval(() => {
       this.boundingMob = this.positionMob.getBoundingClientRect();
-
       switch (this.roadMapMob[indexRoadMapMob].direction) {
         case "right":
           if (this.positionStartX < this.roadMapMob[indexRoadMapMob].element.left) {
@@ -111,7 +108,7 @@ class Mob extends Ground {
           startGame.loseLife();
         }, 400);
       }
-    }, 1000);
+    }, 100);
   };
   death = () => {
     this.positionMob.src = "assets/img/textureObjet/bomba.gif";

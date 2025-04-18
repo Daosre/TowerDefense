@@ -4,10 +4,13 @@ class Game {
     this.isPlayed = false;
     this.hearth = document.querySelector("#heartNbr");
     this.money = 100;
+    this.moneyByLevel = [100, 150, 200];
+    this.wallet = document.querySelector("#wallet");
     this.screenTitle = document.querySelector("#screenTitle");
     this.easyButton = document.querySelector("#easy");
     this.normalButton = document.querySelector("#normal");
     this.hardButton = document.querySelector("#hard");
+
     this.level = 0;
     this.waveNbr = 1;
     this.assetMonsters = [
@@ -31,6 +34,9 @@ class Game {
   init = () => {
     const initGame = (nbr) => {
       if (!this.isPlayed) {
+        this.store = new Store();
+        this.store.init();
+        console.log(this.wallet);
         this.isPlayed = true;
         multiPage.classList.add("transition_Page");
         setTimeout(() => {
@@ -53,7 +59,6 @@ class Game {
     });
   };
   start = () => {
-    this.store = new Store(this.store);
     const terrain = new Ground(this.level, this.store);
     terrain.init();
     terrain.createGround(this.mappingLevel[this.level]);
@@ -69,9 +74,10 @@ class Game {
   }
   loseLife = () => {
     this.life--;
-    this.hearth.innerText = this.life;
-    if (this.life <= 0) {
+    if (this.life < 0) {
       this.gameOver();
+    } else {
+      this.hearth.innerText = this.life;
     }
   };
   gameOver = () => {

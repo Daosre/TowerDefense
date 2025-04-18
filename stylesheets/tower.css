@@ -1,0 +1,37 @@
+#articleT1,
+#articleT2,
+#articleT3 {
+  display: none;
+}
+
+.assetArrow1 {
+  background-image: url("../assets/img/Tower/Arrow/TowerArrow1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+.assetArrow2 {
+  background-image: url("../assets/img/Tower/Arrow/TowerArrow2.png");
+}
+.assetArrow3 {
+  background-image: url("../assets/img/Tower/Arrow/TowerArrow3.png");
+}
+.assetMage1 {
+  background-image: url("../assets/img/Tower/Mage/TowerMage1.png");
+}
+.assetMage2 {
+  background-image: url("../assets/img/Tower/Mage/TowerMage2.png");
+}
+.assetMage3 {
+  background-image: url("../assets/img/Tower/Mage/TowerMage3.png");
+}
+.assetElec1 {
+  background-image: url("../assets/img/Tower/Elec/TowerElec1.png");
+}
+.assetElec2 {
+  background-image: url("../assets/img/Tower/Elec/TowerElec2.png");
+}
+.assetElec3 {
+  background-image: url("../assets/img/Tower/Elec/TowerElec3.png");
+}

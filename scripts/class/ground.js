@@ -55,7 +55,7 @@ class Ground extends Game {
               previousSelected.id = "";
             }
             addCase.id = "selected";
-            this.store.caseSelected();
+            this.store.handleSelect(addCase);
           });
         }
         ground.appendChild(addCase);
