@@ -57,10 +57,27 @@ class Store extends Game {
           this.caseSelected.appendChild(imgTurret);
           this.money -= 10;
           this.wallet.innerText = this.money;
-          console.log(this.caseSelected);
         }
         break;
       case 1:
+        if (this.money >= 20) {
+          this.caseSelected.classList.add("turret", "elec1");
+          const imgTurret = document.createElement("div");
+          imgTurret.classList.add("assetElec1");
+          this.caseSelected.appendChild(imgTurret);
+          this.money -= 20;
+          this.wallet.innerText = this.money;
+        }
+        break;
+      case 2:
+        if (this.money >= 50) {
+          this.caseSelected.classList.add("turret", "mage1");
+          const imgTurret = document.createElement("div");
+          imgTurret.classList.add("assetMage1");
+          this.caseSelected.appendChild(imgTurret);
+          this.money -= 20;
+          this.wallet.innerText = this.money;
+        }
         break;
       default:
         console.log("probleme de pauvre");

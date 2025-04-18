@@ -3,13 +3,23 @@
 #articleT3 {
   display: none;
 }
-
-.assetArrow1 {
-  background-image: url("../assets/img/Tower/Arrow/TowerArrow1.png");
+.assetArrow1,
+.assetArrow2,
+.assetArrow3,
+.assetMage1,
+.assetMage2,
+.assetMage3,
+.assetElec1,
+.assetElec2,
+.assetElec3 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
+}
+
+.assetArrow1 {
+  background-image: url("../assets/img/Tower/Arrow/TowerArrow1.png");
 }
 .assetArrow2 {
   background-image: url("../assets/img/Tower/Arrow/TowerArrow2.png");
