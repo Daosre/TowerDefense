@@ -123,6 +123,8 @@ class Mob extends Ground {
   };
   death = () => {
     this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
+    startGame.earnMoney(this.money);
+
     setTimeout(() => {
       this.positionMob.remove();
       clearInterval(this.intervalMove);

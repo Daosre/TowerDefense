@@ -18,6 +18,7 @@
   transition: left 2s ease-out, top 2s ease-out;
 }
 .life {
+  position: absolute;
   height: 1px;
   background-color: red;
 }

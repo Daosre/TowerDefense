@@ -60,8 +60,7 @@ class Store extends Game {
     btnUpgrade.addEventListener("click", () => {
       if (this.money >= data.price) {
         this.money -= data.price;
-        this.wallet.innerText = this.money;
-        console.log(this.money);
+        this.changeWallet();
         turret.upgrade();
         if (data.level === 2) {
           this.articleUpgrade.remove();
@@ -74,9 +73,12 @@ class Store extends Game {
     this.articleUpgrade.appendChild(btnUpgrade);
     this.sectionStore.appendChild(this.articleUpgrade);
   };
+  changeWallet = (nbr) => {
+    this.money += nbr;
+    this.wallet.innerText = `${this.money}`;
+  };
   handleSelect = (caseName) => {
     this.caseSelected = caseName;
-    console.log(caseName.classList);
     if (!caseName.classList.contains("turret")) {
       this.showTurretLevelOne();
     } else {
@@ -112,7 +114,9 @@ class Store extends Game {
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
         case 0:
+          console.log(this.money);
           if (this.money >= 10) {
+            console.log("ca marche ici ?");
             const turret = new Tower(
               1,
               30,
@@ -180,6 +184,12 @@ class Store extends Game {
         // }
       }
     }
+  };
+  earnMoney = (nbr) => {
+    this.money += nbr;
+    console.log(this.money);
+    this.wallet = this.money;
+    this.store.changeWallet();
   };
 }
 // plop.selected();

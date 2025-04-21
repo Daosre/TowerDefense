@@ -122,6 +122,11 @@ class Game {
   damageMob = (index, damage) => {
     this.mobExist[index].receiveDamage(damage);
   };
+  earnMoney = (nbr) => {
+    this.money += nbr;
+    this.wallet = this.money;
+    this.store.changeWallet(nbr);
+  };
 }
 
 const startGame = new Game(1);
