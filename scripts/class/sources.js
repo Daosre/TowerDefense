@@ -36,3 +36,4 @@ const statsMonster = [
     { life: 320, gold: 11 },
   ],
 ];
+startingMoney = [100, 150, 200];

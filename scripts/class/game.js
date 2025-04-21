@@ -10,7 +10,6 @@ class Game {
     this.easyButton = document.querySelector("#easy");
     this.normalButton = document.querySelector("#normal");
     this.hardButton = document.querySelector("#hard");
-
     this.level = 0;
     this.waveNbr = 0;
     this.assetMonsters = [
@@ -32,6 +31,8 @@ class Game {
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mobExist = [];
     this.store;
+    this.nbrDeathMob = 0;
+    this.delayDisplay = document.querySelector("#delay");
   }
   init = () => {
     const initGame = (nbr) => {
@@ -64,8 +65,7 @@ class Game {
     const terrain = new Ground(this.level, this.store);
     terrain.init();
     terrain.createGround(this.mappingLevel[this.level]);
-    console.log(terrain);
-    this.spawnWave();
+    this.delay();
   };
   nextLevel() {
     this.level++;
@@ -122,6 +122,28 @@ class Game {
     this.money += nbr;
     this.wallet = this.money;
     this.store.changeWallet(nbr);
+  };
+  deathMobs = () => {
+    if (this.nbrDeathMob === 20) {
+      this.nbrDeathMob = 0;
+      if (this.waveNbr === 2) {
+        this.waveNbr = 0;
+        this.level++;
+      }
+    }
+  };
+  delay = () => {
+    let delay10 = 10;
+    this.delayDisplay.classList.add("delay");
+    const delayNextWave = setInterval(() => {
+      delay10--;
+      this.delayDisplay.innerText = delay10;
+      if (delay10 === 0) {
+        clearInterval(delayNextWave);
+        this.spawnWave();
+        this.delayDisplay.classList.remove("delay");
+      }
+    }, 1000);
   };
 }
 
