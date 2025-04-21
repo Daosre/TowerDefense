@@ -12,7 +12,7 @@ class Game {
     this.hardButton = document.querySelector("#hard");
 
     this.level = 0;
-    this.waveNbr = 1;
+    this.waveNbr = 0;
     this.assetMonsters = [
       [
         "assets/img/mobs/slime/bruno.gif",
@@ -27,9 +27,6 @@ class Game {
       ],
       ["assets/img/mobs/slime/pouleto.gif"],
     ];
-    this.nameSlime = "slime";
-    this.nameBat = "bat";
-    this.nameDrake = "drake";
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "c17"];
@@ -90,18 +87,17 @@ class Game {
     console.log("perdu");
   };
   spawnWave = () => {
-    let assetMonster = this.assetMonsters[this.level][0];
+    let assetMonster = this.assetMonsters[this.level][this.waveNbr];
     this.mobExist = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 1; i < 21; i++) {
       setTimeout(() => {
         const bruno = new Mob(
-          10,
-          1,
-          1,
-          assetMonster,
+          statsMonster[this.level][this.waveNbr].life,
+          statsMonster[this.level][this.waveNbr].gold,
+          assetMonster[this.level][this.waveNbr],
           this.spawnLevel[this.level],
-          this.nameSlime,
-          i + 1,
+          nameMonster[this.level],
+          i,
           this.pathMob()
         );
         this.mobExist.push(bruno);

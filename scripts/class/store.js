@@ -74,8 +74,8 @@ class Store extends Game {
     this.sectionStore.appendChild(this.articleUpgrade);
   };
   changeWallet = (nbr) => {
-    this.money += nbr;
-    this.wallet.innerText = `${this.money}`;
+    this.money += nbr ? nbr : 0;
+    this.wallet.innerText = this.money;
   };
   handleSelect = (caseName) => {
     this.caseSelected = caseName;
@@ -114,9 +114,7 @@ class Store extends Game {
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
         case 0:
-          console.log(this.money);
           if (this.money >= 10) {
-            console.log("ca marche ici ?");
             const turret = new Tower(
               1,
               30,

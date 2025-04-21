@@ -1,5 +1,5 @@
 class Mob extends Ground {
-  constructor(health, speed, money, asset, spawnPlace, name, index, roadMapMob) {
+  constructor(health, money, asset, spawnPlace, name, index, roadMapMob) {
     super(ground);
     this.money = money;
     this.index = index;
@@ -7,7 +7,6 @@ class Mob extends Ground {
     this.spawnPlace = spawnPlace;
     this.health = health;
     this.life = document.createElement("div");
-    this.speed = speed;
     this.roadMapMob = roadMapMob;
     this.asset = asset;
     this.start = document.querySelector(`.${this.spawnPlace}`);
