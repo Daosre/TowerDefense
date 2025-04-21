@@ -14,18 +14,12 @@ function addClassByElement(array, word, caseName, elementCase) {
 class Ground extends Game {
   constructor(level, store) {
     super(level, store);
-    this.store = store;
     this.level = level;
+    this.store = store;
     this.ground = document.querySelector("#ground");
     this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
     this.reset = document.querySelector("#next");
   }
-  init = () => {
-    // this.reset.addEventListener("click", () => {
-    //   this.resetMap();
-    //   this.nextLevel();
-    // });
-  };
   resetMap = () => {
     this.ground.replaceChildren();
   };
@@ -55,6 +49,7 @@ class Ground extends Game {
               previousSelected.id = "";
             }
             addCase.id = "selected";
+            console.log();
             this.store.handleSelect(addCase);
           });
         }

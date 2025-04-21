@@ -6,11 +6,12 @@ class Mob extends Ground {
     this.name = name;
     this.spawnPlace = spawnPlace;
     this.health = health;
+    this.life = document.createElement("div");
     this.speed = speed;
     this.roadMapMob = roadMapMob;
     this.asset = asset;
     this.start = document.querySelector(`.${this.spawnPlace}`);
-    this.createSlime = document.createElement("img");
+    this.createMob = document.createElement("div");
     this.valueMooveX = this.start.getBoundingClientRect().width;
     this.valueMooveY = this.start.getBoundingClientRect().height;
     this.positionStartX = 0;
@@ -20,10 +21,13 @@ class Mob extends Ground {
     this.intervalMove;
   }
   spawn = () => {
-    this.createSlime.src = this.asset;
-    this.createSlime.classList.add(`${this.name}${this.index}`, this.name, "moveTransition");
-    this.createSlime.classList.toggle("rotateRight");
-    this.start.appendChild(this.createSlime);
+    this.createMob.src = this.asset;
+    this.createMob.classList.add(`${this.name}${this.index}`, this.name, "moveTransition");
+    this.createMob.classList.toggle("rotateRight");
+    this.life.classList.add("life");
+    this.life.style.width = this.health + "px";
+    this.createMob.appendChild(this.life);
+    this.start.appendChild(this.createMob);
     this.initPosition();
     this.move();
   };
@@ -110,8 +114,15 @@ class Mob extends Ground {
       }
     }, 1000);
   };
+  receiveDamage = (damage) => {
+    this.health -= damage;
+    this.life.style.width = this.health + "px";
+    if (this.health <= 0) {
+      this.death();
+    }
+  };
   death = () => {
-    this.positionMob.src = "assets/img/textureObjet/bomba.gif";
+    this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
     setTimeout(() => {
       this.positionMob.remove();
       clearInterval(this.intervalMove);

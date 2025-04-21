@@ -31,11 +31,7 @@ class Game {
     this.nameBat = "bat";
     this.nameDrake = "drake";
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
-    this.roadMapMob = [
-      roadMapMobLevelOne,
-      roadMapMobLevelTwo,
-      roadMapMobLevelThree,
-    ];
+    this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mobExist = [];
     this.store;
@@ -71,6 +67,7 @@ class Game {
     const terrain = new Ground(this.level, this.store);
     terrain.init();
     terrain.createGround(this.mappingLevel[this.level]);
+    console.log(terrain);
     this.spawnWave();
   };
   nextLevel() {
@@ -94,6 +91,7 @@ class Game {
   };
   spawnWave = () => {
     let assetMonster = this.assetMonsters[this.level][0];
+    this.mobExist = [];
     for (let i = 0; i < 20; i++) {
       setTimeout(() => {
         const bruno = new Mob(
@@ -115,13 +113,14 @@ class Game {
     const arrayMob = [];
     this.roadMapMob[this.level].map((element) => {
       arrayMob.push({
-        element: document
-          .querySelector(`.${element.case}`)
-          .getBoundingClientRect(),
+        element: document.querySelector(`.${element.case}`).getBoundingClientRect(),
         direction: element.direction,
       });
     });
     return arrayMob;
+  };
+  damageMob = (index, damage) => {
+    this.mobExist[index].receiveDamage(damage);
   };
 }
 

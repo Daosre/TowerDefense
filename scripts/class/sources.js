@@ -6,3 +6,4 @@ let assetMonster = [
   //Dragon
   [],
 ];
+const nameMonster = ["slime", "bat", "moder"];

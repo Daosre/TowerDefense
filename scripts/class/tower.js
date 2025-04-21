@@ -1,6 +1,7 @@
 class Tower {
-  constructor(damage, price, asset, type, caseName, index) {
-    this.level = 1;
+  constructor(damage, price, asset, type, caseName, index, levelMap) {
+    this.levelMap = levelMap;
+    this.levelTower = 1;
     this.damage = damage;
     this.price = price;
     this.asset = asset;
@@ -10,10 +11,10 @@ class Tower {
     this.apparenceTower;
   }
   changeTower = () => {
-    this.apparenceTower.classList.add(this.asset + this.level);
+    this.apparenceTower.classList.add(this.asset + this.levelTower);
   };
   whatLevel = () => {
-    return { level: this.level, asset: this.asset, price: this.price };
+    return { level: this.levelTower, asset: this.asset, price: this.price };
   };
   spawnTower = () => {
     buyTower.addEventListener("click", () => {
@@ -21,10 +22,11 @@ class Tower {
     });
   };
   create = () => {
-    this.caseName.classList.add("turret", `tower${this.index}`, this.type + this.level);
+    this.caseName.classList.add("turret", `tower${this.index}`, this.type + this.levelTower);
     this.apparenceTower = document.createElement("div");
-    this.apparenceTower.classList.add(this.asset + this.level);
+    this.apparenceTower.classList.add(this.asset + this.levelTower);
     this.caseName.appendChild(this.apparenceTower);
+    this.detectMob();
   };
   upgrade = () => {
     this.price += 20;
@@ -33,8 +35,33 @@ class Tower {
     } else {
       this.damage *= 2;
     }
-    this.level++;
+    this.levelTower++;
     this.changeTower();
+  };
+  detectMob = () => {
+    setInterval(() => {
+      const boundingTower = this.caseName.getBoundingClientRect();
+      const towerCenterX = boundingTower.left;
+      const towerCenterY = boundingTower.top;
+      for (let i = 1; i < 21; i++) {
+        const existingMob = document.querySelector(`.${nameMonster[this.levelMap]}${i}`);
+        if (existingMob) {
+          const boundingMob = existingMob.getBoundingClientRect();
+          if (
+            towerCenterY - 100 <= boundingMob.top + 25 &&
+            towerCenterY + 100 >= boundingMob.top - 25 &&
+            towerCenterX - 100 <= boundingMob.left + 25 &&
+            towerCenterX + 100 >= boundingMob.left - 25
+          ) {
+            this.attack(i);
+            return;
+          }
+        }
+      }
+    }, 2000);
+  };
+  attack = (index) => {
+    startGame.damageMob(index - 1, this.damage);
   };
 }
 
