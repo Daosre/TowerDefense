@@ -40,7 +40,16 @@ class Ground extends Game {
         let isFreeCase = true;
         mapping.map((element) => {
           if (isFreeCase) {
-            isFreeCase = addClassByElement(element.array, element.word, caseName, addCase);
+            if (typeof element.word === "object") {
+              isFreeCase = addClassByElement(
+                element.array,
+                this.randomBlockCase(),
+                caseName,
+                addCase
+              );
+            } else {
+              isFreeCase = addClassByElement(element.array, element.word, caseName, addCase);
+            }
           }
         });
         if (isFreeCase) {
@@ -61,7 +70,13 @@ class Ground extends Game {
     }
   };
   randomGrass = () => {
-    let randomNbr = Math.round(Math.random() * (this.freeCaseImage[this.level].length - 1 - 0) + 0);
+    const randomNbr = Math.round(
+      Math.random() * (this.freeCaseImage[this.level].length - 1 - 0) + 0
+    );
     return this.freeCaseImage[this.level][randomNbr];
+  };
+  randomBlockCase = () => {
+    const randomNbr = Math.round(Math.random() * (assetBlockCaseLevelThree.length - 1 - 0) + 0);
+    return assetBlockCaseLevelThree[randomNbr];
   };
 }
