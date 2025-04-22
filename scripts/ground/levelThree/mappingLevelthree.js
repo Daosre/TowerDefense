@@ -119,12 +119,12 @@ const blockCase = [
   "l16",
   "l17",
 ];
-// const mappingLevelThree = [
-//     { array: lavaLevelTwo, word: "lava" },
-//     { array: rockLevelTwo, word: "rock" },
-//     { array: houseLevelTwo, word: "house" },
-//     { array: blockCase, word: "road" },
-//   ]
+const mappingLevelThree = [
+  { array: lavaLevelTwo, word: "lava" },
+  { array: rockLevelTwo, word: "rock" },
+  { array: houseLevelTwo, word: "house" },
+  { array: blockCase, word: "road" },
+];
 const assetFreeCaseLevelThree = ["grass", "grass2", "grass3", "grass4"];
 
 const roadMapMobLevelThree = [

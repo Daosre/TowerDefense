@@ -20,6 +20,9 @@ class Ground extends Game {
     this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
     this.reset = document.querySelector("#next");
   }
+  init = () => {
+    this.resetMap();
+  };
   resetMap = () => {
     this.ground.replaceChildren();
   };

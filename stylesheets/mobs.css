@@ -2,14 +2,34 @@
   position: absolute;
   height: 42px;
   width: 32px;
-  background-image: url("../assets/img/mobs/slime/bruno.gif");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
 }
-
+.bat {
+  position: absolute;
+  height: 42px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.moder {
+  position: absolute;
+  height: 42px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  /* transform: rotateY(180deg); */
+}
 .rotateRight {
   transform: rotateY(180deg);
 }

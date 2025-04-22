@@ -1,4 +1,4 @@
-let assetMonster = [
+const assetMonster = [
   //Slime
   [
     "../../assets/img/mobs/slime/bruno.gif",
@@ -17,6 +17,7 @@ let assetMonster = [
     "../../assets/img/mobs/dragon/moderLeft.gif",
     "../../assets/img/mobs/dragon/moderLeft.gif",
   ],
+  ["assets/img/mobs/slime/pouleto.gif"],
 ];
 const nameMonster = ["slime", "bat", "moder"];
 const statsMonster = [
@@ -26,9 +27,9 @@ const statsMonster = [
     { life: 80, gold: 7 },
   ],
   [
-    { life: 40, gold: 6 },
-    { life: 80, gold: 7 },
-    { life: 160, gold: 8 },
+    { life: 30, gold: 6 },
+    { life: 60, gold: 7 },
+    { life: 120, gold: 8 },
   ],
   [
     { life: 80, gold: 9 },

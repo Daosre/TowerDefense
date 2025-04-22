@@ -18,13 +18,16 @@ class Mob extends Ground {
     this.boundingMob;
     this.positionMob;
     this.intervalMove;
+    this.isDeath = false;
   }
   spawn = () => {
-    this.createMob.src = this.asset;
     this.createMob.classList.add(`${this.name}${this.index}`, this.name, "moveTransition");
-    this.createMob.classList.toggle("rotateRight");
+    if (this.name === "slime") {
+      this.createMob.classList.toggle("rotateRight");
+    }
     this.life.classList.add("life");
     this.life.style.width = this.health + "px";
+    this.createMob.style.backgroundImage = `url('${this.asset}')`;
     this.createMob.appendChild(this.life);
     this.start.appendChild(this.createMob);
     this.initPosition();
@@ -64,7 +67,11 @@ class Mob extends Ground {
         case "right":
           if (this.positionStartX < this.roadMapMob[indexRoadMapMob].element.left) {
             this.positionStartX += this.valueMooveX;
-            this.positionMob.classList.add("rotateRight");
+            if (this.name === "slime") {
+              this.positionMob.classList.add("rotateRight");
+            } else {
+              this.positionMob.classList.remove("rotateRight");
+            }
             this.positionMob.style.left = this.positionStartX + "px";
           } else {
             indexRoadMapMob++;
@@ -87,7 +94,11 @@ class Mob extends Ground {
             this.roadMapMob[indexRoadMapMob].element.left
           ) {
             this.positionStartX -= this.valueMooveX;
-            this.positionMob.classList.remove("rotateRight");
+            if (this.name === "slime") {
+              this.positionMob.classList.remove("rotateRight");
+            } else {
+              this.positionMob.classList.add("rotateRight");
+            }
             this.positionMob.style.left = this.positionStartX + "px";
           } else {
             indexRoadMapMob++;
@@ -122,11 +133,14 @@ class Mob extends Ground {
   };
   death = () => {
     this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
-    startGame.earnMoney(this.money);
-
     setTimeout(() => {
       this.positionMob.remove();
       clearInterval(this.intervalMove);
+      if (!this.isDeath) {
+        this.isDeath = true;
+        startGame.earnMoney(this.money);
+        startGame.deathMobs();
+      }
     }, 400);
   };
 }
