@@ -31,12 +31,14 @@ class Game {
     this.nameBat = "bat";
     this.nameDrake = "drake";
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
+    this.mappingLevel = [mappingLevelOne, mappingLevelTwo, mappingLevelThree];
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "c17"];
     this.mobExist = [];
     this.store;
     this.nbrDeathMob = 0;
     this.delayDisplay = document.querySelector("#delay");
+    this.terrain;
   }
   init = () => {
     const initGame = (nbr) => {
@@ -66,19 +68,23 @@ class Game {
     });
   };
   start = () => {
-    const terrain = new Ground(this.level, this.store);
-    terrain.init();
-    terrain.createGround(this.mappingLevel[this.level]);
+    this.terrain = new Ground(this.level, this.store);
+    this.terrain.createGround(this.mappingLevel[this.level]);
     this.delay();
   };
-  nextLevel() {
+  nextLevel = () => {
     this.level++;
+    this.terrain.init();
+    this.terrain = new Ground(this.level, this.store);
+    this.store.level = this.level;
+    this.store.resetMoney();
     this.mobExist.map((mob) => {
       mob.death();
     });
     this.mobExist = [];
-    this.start();
-  }
+    this.terrain.createGround(this.mappingLevel[this.level]);
+    this.delay();
+  };
   loseLife = () => {
     this.life--;
     if (this.life < 0) {
@@ -91,7 +97,6 @@ class Game {
     console.log("perdu");
   };
   spawnWave = () => {
-    let assetMonster = this.assetMonsters[this.level][this.waveNbr];
     this.mobExist = [];
     for (let i = 1; i < 21; i++) {
       setTimeout(() => {
@@ -128,17 +133,22 @@ class Game {
     this.store.changeWallet(nbr);
   };
   deathMobs = () => {
+    this.nbrDeathMob++;
     if (this.nbrDeathMob === 20) {
       this.nbrDeathMob = 0;
-      if (this.waveNbr === 2) {
+      this.waveNbr++;
+      if (this.waveNbr === 3) {
         this.waveNbr = 0;
-        this.level++;
+        this.nextLevel();
+      } else {
+        this.delay();
       }
     }
   };
   delay = () => {
     let delay10 = 10;
     this.delayDisplay.classList.add("delay");
+    this.delayDisplay.innerText = delay10;
     const delayNextWave = setInterval(() => {
       delay10--;
       this.delayDisplay.innerText = delay10;

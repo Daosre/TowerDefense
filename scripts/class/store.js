@@ -75,7 +75,7 @@ class Store extends Game {
   };
   changeWallet = (nbr) => {
     this.money += nbr ? nbr : 0;
-    this.wallet.innerText = this.money;
+    this.wallet.innerText = String(this.money);
   };
   handleSelect = (caseName) => {
     this.caseSelected = caseName;
@@ -111,6 +111,7 @@ class Store extends Game {
   };
   showTurretLevelTwo = () => {};
   addTurret = (nbr) => {
+    console.log(this.level);
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
         case 0:
@@ -185,9 +186,11 @@ class Store extends Game {
   };
   earnMoney = (nbr) => {
     this.money += nbr;
-    console.log(this.money);
-    this.wallet = this.money;
-    this.store.changeWallet();
+    this.changeWallet();
+  };
+  resetMoney = () => {
+    this.money = Number(this.moneyByLevel[this.level]);
+    this.changeWallet(0);
   };
 }
 // plop.selected();
