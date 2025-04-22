@@ -2,6 +2,12 @@
   position: absolute;
   height: 42px;
   width: 32px;
+  background-image: url("../assets/img/mobs/slime/bruno.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
 
 .rotateRight {
@@ -11,3 +17,19 @@
 .moveTransition {
   transition: left 2s ease-out, top 2s ease-out;
 }
+.life {
+  position: absolute;
+  height: 1px;
+  background-color: red;
+}
+
+/* .life::before {
+  align-self: center;
+  content: "";
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  width: 10px;
+  height: 1px;
+  background-color: red;
+} */

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 
 * {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,4 +31,11 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+.delay {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
 }

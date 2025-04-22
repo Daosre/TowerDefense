@@ -2,6 +2,7 @@ class Store extends Game {
   constructor() {
     super();
     this.caseSelected;
+    this.level = this.level;
     this.money = this.money;
     this.wallet = this.wallet;
     this.sectionStore = document.querySelector("#store");
@@ -59,8 +60,7 @@ class Store extends Game {
     btnUpgrade.addEventListener("click", () => {
       if (this.money >= data.price) {
         this.money -= data.price;
-        this.wallet.innerText = this.money;
-        console.log(this.money);
+        this.changeWallet();
         turret.upgrade();
         if (data.level === 2) {
           this.articleUpgrade.remove();
@@ -73,9 +73,12 @@ class Store extends Game {
     this.articleUpgrade.appendChild(btnUpgrade);
     this.sectionStore.appendChild(this.articleUpgrade);
   };
+  changeWallet = (nbr) => {
+    this.money += nbr ? nbr : 0;
+    this.wallet.innerText = this.money;
+  };
   handleSelect = (caseName) => {
     this.caseSelected = caseName;
-    console.log(caseName.classList);
     if (!caseName.classList.contains("turret")) {
       this.showTurretLevelOne();
     } else {
@@ -118,7 +121,8 @@ class Store extends Game {
               "assetArrow",
               "arrow",
               this.caseSelected,
-              this.nbrTower
+              this.nbrTower,
+              this.level
             );
             turret.create();
             this.towers.push(turret);
@@ -132,7 +136,15 @@ class Store extends Game {
           break;
         case 1:
           if (this.money >= 20) {
-            const turret = new Tower(5, 50, "assetElec", "elec", this.caseSelected, this.nbrTower);
+            const turret = new Tower(
+              5,
+              50,
+              "assetElec",
+              "elec",
+              this.caseSelected,
+              this.nbrTower,
+              this.level
+            );
             turret.create();
             this.towers.push(turret);
             this.nbrTower++;
@@ -145,7 +157,15 @@ class Store extends Game {
           break;
         case 2:
           if (this.money >= 50) {
-            const turret = new Tower(10, 70, "assetMage", "mage", this.caseSelected, this.nbrTower);
+            const turret = new Tower(
+              10,
+              70,
+              "assetMage",
+              "mage",
+              this.caseSelected,
+              this.nbrTower,
+              this.level
+            );
             turret.create();
             this.towers.push(turret);
             this.nbrTower++;
@@ -162,6 +182,12 @@ class Store extends Game {
         // }
       }
     }
+  };
+  earnMoney = (nbr) => {
+    this.money += nbr;
+    console.log(this.money);
+    this.wallet = this.money;
+    this.store.changeWallet();
   };
 }
 // plop.selected();
