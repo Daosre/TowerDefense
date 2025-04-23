@@ -33,7 +33,7 @@ class Game {
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo];
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo, mappingLevelThree];
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
-    this.spawnLevel = ["b1", "a4", "c17"];
+    this.spawnLevel = ["b1", "a4", "a2"];
     this.mobExist = [];
     this.store;
     this.nbrDeathMob = 0;
@@ -45,7 +45,6 @@ class Game {
       if (!this.isPlayed) {
         this.store = new Store();
         this.store.init();
-        console.log(this.wallet);
         this.isPlayed = true;
         multiPage.classList.add("transition_Page");
         setTimeout(() => {

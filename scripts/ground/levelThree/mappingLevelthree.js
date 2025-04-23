@@ -1,5 +1,6 @@
-const homeLevelThree = ["a2"];
+const homeLevelThree = ["c17"];
 const roadLevelThreePartOne = [
+  "a2",
   "b2",
   "b4",
   "b5",
@@ -33,7 +34,6 @@ const roadLevelThreePartTwo = [
   "c14",
   "c15",
   "c16",
-  "c17",
   "d12",
   "d14",
   "e12",
@@ -119,25 +119,26 @@ const blockCase = [
   "l16",
   "l17",
 ];
-const mappingLevelThree = [
-  { array: lavaLevelTwo, word: "lava" },
-  { array: rockLevelTwo, word: "rock" },
-  { array: houseLevelTwo, word: "house" },
-  { array: blockCase, word: "road" },
-];
 const assetFreeCaseLevelThree = ["grass", "grass2", "grass3", "grass4"];
+const assetBlockCaseLevelThree = ["water", "tree", "lava", "rock"];
+const mappingLevelThree = [
+  { array: roadLevelThreePartOne, word: "road" },
+  { array: roadLevelThreePartTwo, word: "road2" },
+  { array: blockCase, word: assetFreeCaseLevelThree },
+  { array: homeLevelThree, word: "house" },
+];
 
 const roadMapMobLevelThree = [
-  { direction: "left", case: "c14" },
-  { direction: "bottom", case: "k14" },
-  { direction: "gauche", case: "k7" },
-  { direction: "top", case: "f7" },
-  { direction: "right", case: "f10" },
-  { direction: "bottom", case: "i10" },
-  { direction: "right", case: "i12" },
-  { direction: "top", case: "b12" },
-  { direction: "left", case: "b4" },
-  { direction: "bottom", case: "j4" },
-  { direction: "left", case: "j2" },
-  { direction: "top", case: "a2" },
+  { direction: "bottom", case: "j2" },
+  { direction: "right", case: "j4" },
+  { direction: "top", case: "b2" },
+  { direction: "right", case: "b12" },
+  { direction: "bottom", case: "i12" },
+  { direction: "left", case: "i10" },
+  { direction: "top", case: "f10" },
+  { direction: "left", case: "f7" },
+  { direction: "bottom", case: "k7" },
+  { direction: "right", case: "k14" },
+  { direction: "top", case: "c14" },
+  { direction: "right", case: "c17" },
 ];
