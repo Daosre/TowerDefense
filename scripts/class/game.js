@@ -16,10 +16,18 @@ class Game {
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "a2"];
     this.mobExist = [];
+    this.intervalMobs = [];
+    this.currentWave;
     this.store;
     this.nbrDeathMob = 0;
     this.delayDisplay = document.querySelector("#delay");
     this.terrain;
+    this.isDead = false;
+    this.multiPage = document.querySelector("#multiple_Page");
+    this.titleStore = document.querySelector(".title_Store");
+    this.menuStart = document.querySelector(".start");
+    this.menuFail = document.querySelector("#looser");
+    this.buttonRetry = document.querySelector("#retry");
   }
   init = () => {
     const initGame = (nbr) => {
@@ -27,11 +35,12 @@ class Game {
         this.store = new Store();
         this.store.init();
         this.isPlayed = true;
-        multiPage.classList.add("transition_Page");
+        this.multiPage.classList.add("transition_Page");
         setTimeout(() => {
-          multiPage.style.zIndex = "-2";
+          this.multiPage.style.zIndex = "-2";
+          this.menuStart.style.display = "none";
         }, 2000);
-        titleStore.style.display = "flex";
+        this.titleStore.style.display = "flex";
         this.life = nbr;
         this.hearth.innerText = nbr;
         this.start();
@@ -46,6 +55,26 @@ class Game {
     this.hardButton.addEventListener("click", () => {
       initGame(1);
     });
+    this.buttonRetry.addEventListener("click", () => {
+      if (this.life === 0) {
+        this.life = 5;
+        this.hearth.innerText = this.life;
+        this.clearMob();
+        this.store.clearTower();
+        setTimeout(() => {
+          this.multiPage.style.zIndex = "-2";
+          this.menuFail.style.display = "none";
+          this.isDead = false;
+          this.terrain.resetMap();
+          this.start();
+        }, 2000);
+        this.multiPage.style.opacity = "0";
+      }
+    });
+  };
+  clearMob = () => {
+    this.intervalMobs.map((interval) => clearTimeout(interval));
+    this.mobExist.map((mob) => mob.resetLevel());
   };
   start = () => {
     this.terrain = new Ground(this.level, this.store);
@@ -66,20 +95,30 @@ class Game {
     this.delay();
   };
   loseLife = () => {
-    this.life--;
-    if (this.life < 0) {
-      this.gameOver();
+    if (!this.isDead) {
+      this.life--;
+    }
+    if (this.life <= 0) {
+      if (!this.isDead) {
+        this.hearth.innerText = this.life;
+        this.isDead = true;
+        this.gameOver();
+      }
     } else {
       this.hearth.innerText = this.life;
     }
   };
   gameOver = () => {
-    console.log("perdu");
+    this.multiPage.style.zIndex = "2";
+    this.multiPage.style.opacity = "1";
+    this.menuFail.style.display = "flex";
+    this.nbrDeathMob = 0;
+    this.clearMob();
   };
   spawnWave = () => {
     this.mobExist = [];
     for (let i = 1; i < 21; i++) {
-      setTimeout(() => {
+      const mob = setTimeout(() => {
         const bruno = new Mob(
           statsMonster[this.level][this.waveNbr].life,
           statsMonster[this.level][this.waveNbr].gold,
@@ -92,6 +131,7 @@ class Game {
         this.mobExist.push(bruno);
         bruno.spawn();
       }, 2000 * i);
+      this.intervalMobs.push(mob);
     }
   };
   pathMob = () => {
@@ -112,8 +152,9 @@ class Game {
     this.wallet = this.money;
     this.store.changeWallet(nbr);
   };
-  deathMobs = () => {
+  deathMobs = (index) => {
     this.nbrDeathMob++;
+    this.mobExist = this.mobExist.filter((mob, i) => i != index);
     if (this.nbrDeathMob === 20) {
       this.nbrDeathMob = 0;
       this.waveNbr++;
@@ -126,7 +167,7 @@ class Game {
     }
   };
   delay = () => {
-    let delay10 = 10;
+    let delay10 = 1;
     this.delayDisplay.classList.add("delay");
     this.delayDisplay.innerText = delay10;
     const delayNextWave = setInterval(() => {
