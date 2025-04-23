@@ -61,6 +61,7 @@ class Game {
         this.hearth.innerText = this.life;
         this.clearMob();
         this.store.clearTower();
+        this.store.resetMoney();
         setTimeout(() => {
           this.multiPage.style.zIndex = "-2";
           this.menuFail.style.display = "none";
