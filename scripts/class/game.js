@@ -27,6 +27,7 @@ class Game {
     this.titleStore = document.querySelector(".title_Store");
     this.menuStart = document.querySelector(".start");
     this.menuFail = document.querySelector("#looser");
+    this.menuVictory = document.querySelector("#ending");
     this.buttonRetry = document.querySelector("#retry");
   }
   init = () => {
@@ -81,6 +82,11 @@ class Game {
     this.terrain = new Ground(this.level, this.store);
     this.terrain.createGround(this.mappingLevel[this.level]);
     this.delay();
+  };
+  win = () => {
+    this.multiPage.style.zIndex = "2";
+    this.multiPage.style.opacity = "1";
+    this.menuVictory.style.display = "flex";
   };
   nextLevel = () => {
     this.level++;
@@ -155,20 +161,23 @@ class Game {
   };
   deathMobs = (index) => {
     this.nbrDeathMob++;
-    this.mobExist = this.mobExist.filter((mob, i) => i != index);
     if (this.nbrDeathMob === 20) {
       this.nbrDeathMob = 0;
       this.waveNbr++;
       if (this.waveNbr === 3) {
         this.waveNbr = 0;
-        this.nextLevel();
+        if (this.level === 3) {
+          this.win();
+        } else {
+          this.nextLevel();
+        }
       } else {
         this.delay();
       }
     }
   };
   delay = () => {
-    let delay10 = 1;
+    let delay10 = 10;
     this.delayDisplay.classList.add("delay");
     this.delayDisplay.innerText = delay10;
     const delayNextWave = setInterval(() => {

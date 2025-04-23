@@ -122,7 +122,7 @@ class Mob extends Ground {
           startGame.loseLife();
         }, 400);
       }
-    }, 10);
+    }, 1000);
   };
   receiveDamage = (damage) => {
     this.health -= damage;
@@ -138,6 +138,7 @@ class Mob extends Ground {
     this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
     setTimeout(() => {
       this.positionMob.remove();
+      // console.log(this.positionMob);
       clearInterval(this.intervalMove);
       if (!this.isDeath) {
         this.isDeath = true;

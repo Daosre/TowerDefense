@@ -114,7 +114,6 @@ class Store extends Game {
   };
   showTurretLevelTwo = () => {};
   addTurret = (nbr) => {
-    console.log(this.level);
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
         case 0:
