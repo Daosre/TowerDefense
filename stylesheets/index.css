@@ -1,48 +1,38 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 * {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 main {
+  position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: gray;
-}
-#screenTitle {
-  display: none;
+  background-color: white;
 }
 #game {
-  position: relative;
   display: flex;
   justify-content: space-between;
 }
 #ground {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(17, 50px);
   grid-template-rows: repeat(12, 50px);
+  box-shadow: 0 0 10px 50px rgba(128, 128, 128, 0.2);
 }
 .case {
-  border: 1px solid black;
+  background-image: url("../assets/img/texture1/grass.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-#store {
-  display: flex;
-  background-color: bisque;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
-  min-width: 10vw;
-  min-height: 100vh;
-  padding: 20px;
-}
-.articleTurret {
-  display: flex;
-  gap: 10px;
-}
-.price {
-  background-color: white;
-  border: 1px solid #212121;
-  border-radius: 50%;
-  padding: 8px;
-  box-shadow: 0 5px 5px #212121;
+.delay {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
 }

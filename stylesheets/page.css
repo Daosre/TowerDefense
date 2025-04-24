@@ -1,0 +1,207 @@
+#multiple_Page {
+  position: absolute;
+  transition: all 2s;
+}
+.start {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../assets/img/fond/Wallaper.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 64px;
+    background-color: #74747440;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+    width: 50%;
+    height: 20%;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+  .button_Container {
+    display: flex;
+    width: 70%;
+    padding: 30px;
+    justify-content: space-around;
+    button {
+      background-color: #74747440;
+      border-radius: 10px;
+      box-shadow: inset 0 2px 2px black;
+      backdrop-filter: blur(5px);
+      width: 20%;
+      color: white;
+      font-size: 32px;
+      padding: 20px;
+      cursor: pointer;
+    }
+  }
+  #start {
+    background-color: #74747440;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+    width: 15%;
+    color: white;
+    margin-top: 5%;
+    font-size: 32px;
+    padding: 20px;
+    cursor: pointer;
+  }
+}
+#victory {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  article {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/fond/Wallaper.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    p {
+      background-color: #74747440;
+      border-radius: 10px;
+      box-shadow: inset 0 2px 2px black;
+      backdrop-filter: blur(5px);
+      width: 30%;
+      height: 20%;
+      font-size: 64px;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      backdrop-filter: blur(5px);
+      padding: 10px;
+      width: 15%;
+      height: 10%;
+      cursor: pointer;
+      border-radius: 10px;
+      color: white;
+      font-size: 30px;
+      background-color: #74747440;
+    }
+  }
+}
+#looser {
+  background-image: url(../assets/img/fond/crownbroken.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  h1 {
+    background-color: #74747440;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    width: 35%;
+    height: 20%;
+    background-color: #74747440;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+  }
+  p {
+    font-size: 32px;
+    width: 20%;
+    height: 10%;
+    background-color: #74747440;
+    color: white;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+  }
+}
+#ending {
+  background-image: url(../assets/img/fond/crown.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  article {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: white;
+    background-color: #74747440;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 35%;
+    height: 20%;
+    background-color: #74747440;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+  }
+  .home {
+    background-color: #74747440;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 15%;
+    height: 10%;
+    background-color: #74747440;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 2px black;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+  }
+}
+button {
+  background-color: #74747440;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 2px black;
+  backdrop-filter: blur(5px);
+  width: 20%;
+  color: white;
+  font-size: 32px;
+  padding: 20px;
+  cursor: pointer;
+}

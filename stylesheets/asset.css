@@ -1,0 +1,78 @@
+.water {
+  background-image: url("../assets/img/texture1/water_128px.gif");
+}
+.tree {
+  background-image: url("../assets/img/texture1/grassT.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.treeImage {
+  background-image: url("../assets/img/textureObjet/tree.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+.house {
+  /*Temporaire changer par le background image du sol pour le chateau uniquement*/
+  background-image: url("../assets/img/textureObjet/castle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #768649;
+}
+.houseImage {
+  background-image: url("../assets/img/textureObjet/castle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.road {
+  background-image: url("../assets/img/texture1/road3.png");
+}
+.road2 {
+  background-image: url("../assets/img/texture2/road.png");
+}
+.lava {
+  background-image: url("../assets/img/texture2/lava.png");
+}
+.rock {
+  background-image: url("../assets/img/texture2/grass.png");
+  /*Changer tous les contain par cover et montré à rém (sauf peut être gif)*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rockImage {
+  background-image: url("../assets/img/textureObjet/rock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 50px;
+}
+.tree2 {
+  background-image: url("../assets/img/texture2/grass2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.tree2Image {
+  background-image: url("../assets/img/textureObjet/tree2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+.grass {
+  background-image: url("../assets/img/texture1/grass3.png");
+}
+.grass2 {
+  background-image: url("../assets/img/texture1/grassT.png");
+}
+.grass3 {
+  background-image: url("../assets/img/texture2/grass.png");
+}
+.grass4 {
+  background-image: url("../assets/img/texture2/grass2.png");
+}
+#selected {
+  border: 2px solid yellow;
+}
