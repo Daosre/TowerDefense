@@ -1,0 +1,55 @@
+.slime {
+  position: absolute;
+  height: 42px;
+  width: 32px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.bat {
+  position: absolute;
+  height: 42px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.moder {
+  position: absolute;
+  height: 42px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  /* transform: rotateY(180deg); */
+}
+.rotateRight {
+  transform: rotateY(180deg);
+}
+
+.moveTransition {
+  transition: left 2s ease-out, top 2s ease-out;
+}
+.life {
+  position: absolute;
+  height: 1px;
+  background-color: red;
+}
+
+/* .life::before {
+  align-self: center;
+  content: "";
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  width: 10px;
+  height: 1px;
+  background-color: red;
+} */
