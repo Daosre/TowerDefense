@@ -131,15 +131,19 @@ class Mob extends Ground {
       this.death();
     }
   };
+  resetLevel = () => {
+    clearInterval(this.intervalMove);
+  };
   death = () => {
     this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
     setTimeout(() => {
       this.positionMob.remove();
+      // console.log(this.positionMob);
       clearInterval(this.intervalMove);
       if (!this.isDeath) {
         this.isDeath = true;
         startGame.earnMoney(this.money);
-        startGame.deathMobs();
+        startGame.deathMobs(this.index);
       }
     }, 400);
   };

@@ -26,6 +26,7 @@ class Ground extends Game {
   resetMap = () => {
     this.ground.replaceChildren();
   };
+
   createGround = (mapping) => {
     //row
     for (let x = 0; x < 12; x++) {
@@ -61,7 +62,6 @@ class Ground extends Game {
               previousSelected.id = "";
             }
             addCase.id = "selected";
-            console.log();
             this.store.handleSelect(addCase);
           });
         }

@@ -9,6 +9,7 @@ class Tower {
     this.caseName = caseName;
     this.index = index;
     this.apparenceTower;
+    this.intervalTower;
   }
   changeTower = () => {
     this.apparenceTower.classList.add(this.asset + this.levelTower);
@@ -20,6 +21,9 @@ class Tower {
     buyTower.addEventListener("click", () => {
       this.newTower.src = "../assets/img/Tower/Mage/TowerMage1.png";
     });
+  };
+  resetLevel = () => {
+    clearInterval(this.intervalTower);
   };
   create = () => {
     this.caseName.classList.add("turret", `tower${this.index}`, this.type + this.levelTower);
@@ -39,7 +43,7 @@ class Tower {
     this.changeTower();
   };
   detectMob = () => {
-    setInterval(() => {
+    this.intervalTower = setInterval(() => {
       const boundingTower = this.caseName.getBoundingClientRect();
       const towerCenterX = boundingTower.left;
       const towerCenterY = boundingTower.top;

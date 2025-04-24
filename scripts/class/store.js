@@ -42,6 +42,9 @@ class Store extends Game {
       this.addTurret(2);
     });
   };
+  clearTower = () => {
+    this.towers.map((tower) => tower.resetLevel());
+  };
   showUpgradeTower = (data, turret) => {
     this.articleUpgrade.remove();
     this.articleUpgrade = document.createElement("article");
@@ -111,7 +114,6 @@ class Store extends Game {
   };
   showTurretLevelTwo = () => {};
   addTurret = (nbr) => {
-    console.log(this.level);
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
         case 0:
