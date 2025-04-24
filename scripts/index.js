@@ -1,3 +1,2 @@
-let audioTheme = document.getElementById("audio");
-
+let audioTheme = document.getElementById("theme");
 audioTheme.volume = 0.05;
