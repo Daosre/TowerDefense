@@ -13,11 +13,7 @@ class Game {
     this.level = 0;
     this.waveNbr = 0;
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo, mappingLevelThree];
-    this.roadMapMob = [
-      roadMapMobLevelOne,
-      roadMapMobLevelTwo,
-      roadMapMobLevelThree,
-    ];
+    this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
     this.spawnLevel = ["b1", "a4", "a2"];
     this.mobExist = [];
     this.intervalMobs = [];
@@ -36,6 +32,7 @@ class Game {
   }
   init = () => {
     const initGame = (nbr) => {
+      audioTheme.play();
       if (!this.isPlayed) {
         this.store = new Store();
         this.store.init();
@@ -150,9 +147,7 @@ class Game {
     const arrayMob = [];
     this.roadMapMob[this.level].map((element) => {
       arrayMob.push({
-        element: document
-          .querySelector(`.${element.case}`)
-          .getBoundingClientRect(),
+        element: document.querySelector(`.${element.case}`).getBoundingClientRect(),
         direction: element.direction,
       });
     });
