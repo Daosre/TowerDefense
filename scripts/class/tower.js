@@ -43,6 +43,9 @@ class Tower {
       this.damage *= 2;
     }
     this.levelTower++;
+    if (this.type === "arrow" && this.levelTower === 3) {
+      this.damage += 30;
+    }
     this.changeTower();
   };
   detectMob = () => {
