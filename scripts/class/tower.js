@@ -10,6 +10,9 @@ class Tower {
     this.index = index;
     this.apparenceTower;
     this.intervalTower;
+    this.assetAttackElec = "assets/img/projectile/projectileElec.png";
+    this.assetAttackMage = "assets/img/projectile/projectileMage.png";
+    this.assetAttackArrow = "assets/img/projectile/projectileArrow.png";
   }
   changeTower = () => {
     this.apparenceTower.classList.add(this.asset + this.levelTower);
@@ -57,7 +60,11 @@ class Tower {
             towerCenterX - 100 <= boundingMob.left + 25 &&
             towerCenterX + 100 >= boundingMob.left - 25
           ) {
-            this.attack(i);
+            this.attackAnimation(boundingTower, boundingMob);
+            setTimeout(() => {
+              this.attack(i);
+            }, 300);
+
             return;
           }
         }
@@ -66,6 +73,59 @@ class Tower {
   };
   attack = (index) => {
     startGame.damageMob(index - 1, this.damage);
+  };
+  attackAnimation = (boundingTower, boundingMob) => {
+    const imageAttack = document.createElement("img");
+    imageAttack.classList.add("attackAnimation");
+    switch (this.type) {
+      case "arrow":
+        this.attackArrow(boundingTower, boundingMob, imageAttack);
+        break;
+      case "mage":
+        this.attackMage(boundingTower, boundingMob, imageAttack);
+        break;
+      case "elec":
+        this.attackElec(boundingMob, imageAttack);
+        break;
+    }
+  };
+  attackArrow = (boundingTower, boundingMob, image) => {
+    image.style.top = boundingTower.top + 25 + "px";
+    image.style.left = boundingTower.left + 25 + "px";
+    image.src = this.assetAttackArrow;
+    image.classList.add("attackRock");
+    this.caseName.appendChild(image);
+    setTimeout(() => {
+      image.style.top = boundingMob.top + boundingMob.height / 2 + "px";
+      image.style.left = boundingMob.left + "px";
+    }, 100);
+
+    setTimeout(() => {
+      image.remove();
+    }, 300);
+  };
+  attackMage = (boundingTower, boundingMob, image) => {
+    image.style.top = boundingTower.top + "px";
+    image.style.left = boundingTower.left + "px";
+    image.src = this.assetAttackMage;
+    this.caseName.appendChild(image);
+    setTimeout(() => {
+      image.style.top = boundingMob.top + boundingMob.height / 2 + "px";
+      image.style.left = boundingMob.left + "px";
+    }, 100);
+
+    setTimeout(() => {
+      image.remove();
+    }, 300);
+  };
+  attackElec = (boundingMob, image) => {
+    image.style.top = boundingMob.top + "px";
+    image.style.left = boundingMob.left - 4 + "px";
+    image.src = this.assetAttackElec;
+    this.caseName.appendChild(image);
+    setTimeout(() => {
+      image.remove();
+    }, 300);
   };
 }
 

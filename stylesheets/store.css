@@ -44,6 +44,13 @@
     width: 40px;
   }
 }
+button.price {
+  font-size: 20px;
+  color: #212121;
+}
+.price img {
+  width: 40px !important;
+}
 .life_Container {
   background-image: url(../assets/img/texture1/grass2.png);
   display: flex;

@@ -10,7 +10,7 @@ class Game {
     this.easyButton = document.querySelector("#easy");
     this.normalButton = document.querySelector("#normal");
     this.hardButton = document.querySelector("#hard");
-    this.level = 0;
+    this.level = 2;
     this.waveNbr = 0;
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo, mappingLevelThree];
     this.roadMapMob = [roadMapMobLevelOne, roadMapMobLevelTwo, roadMapMobLevelThree];
@@ -120,6 +120,7 @@ class Game {
     this.multiPage.style.opacity = "1";
     this.menuFail.style.display = "flex";
     this.nbrDeathMob = 0;
+    this.waveNbr = 0;
     this.clearMob();
   };
   spawnWave = () => {
@@ -166,7 +167,8 @@ class Game {
       this.waveNbr++;
       if (this.waveNbr === 3) {
         this.waveNbr = 0;
-        if (this.level === 3) {
+
+        if (this.level === 2) {
           this.win();
         } else {
           this.nextLevel();

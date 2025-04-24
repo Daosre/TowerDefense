@@ -9,7 +9,6 @@
 }
 .treeImage {
   background-image: url("../assets/img/textureObjet/tree.png");
-  /* image-shadow: 2px 0px 1px #222; */
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
@@ -38,6 +37,7 @@
 }
 .rock {
   background-image: url("../assets/img/texture2/grass.png");
+  /*Changer tous les contain par cover et montré à rém (sauf peut être gif)*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
