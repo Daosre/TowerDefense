@@ -10,7 +10,7 @@ class Game {
     this.easyButton = document.querySelector("#easy");
     this.normalButton = document.querySelector("#normal");
     this.hardButton = document.querySelector("#hard");
-    this.level = 2;
+    this.level = 0;
     this.waveNbr = 0;
     this.mappingLevel = [mappingLevelOne, mappingLevelTwo, mappingLevelThree];
     this.roadMapMob = [
