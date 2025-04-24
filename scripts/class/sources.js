@@ -32,9 +32,9 @@ const statsMonster = [
     { life: 120, gold: 8 },
   ],
   [
-    { life: 80, gold: 9 },
-    { life: 160, gold: 10 },
-    { life: 200, gold: 11 },
+    { life: 60, gold: 9 },
+    { life: 120, gold: 10 },
+    { life: 160, gold: 11 },
   ],
 ];
 startingMoney = [100, 150, 200];
