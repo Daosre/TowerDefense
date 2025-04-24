@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 * {
   overflow: hidden;
   margin: 0;
@@ -12,9 +12,6 @@ main {
   min-height: 100vh;
   background-color: white;
 }
-/* #screenTitle {
-  display: none;
-} */
 #game {
   display: flex;
   justify-content: space-between;
