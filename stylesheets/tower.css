@@ -45,3 +45,15 @@
 .assetElec3 {
   background-image: url("../assets/img/Tower/Elec/TowerElec3.png");
 }
+
+.attackAnimation {
+  transition: all 0.3s;
+  position: absolute;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  user-select: none;
+}
+.attackRock {
+  width: 20px;
+}
