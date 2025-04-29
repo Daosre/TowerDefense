@@ -18,6 +18,31 @@
  - Life : 60 / 120 / 160
  - Money : 9 / 10 / 11
 
+ ## Tower By Level
+ TowerArrow :
+ 
+ ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/img/Tower/Arrow/TowerArrow1.png)
+ ### Stats By Level Tower :
+ - Damage : 1 / 5 / 45 
+ - Price : 10 / 30 / 50
+ ##
+ 
+ TowerElec :
+ 
+ ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/img/Tower/Elec/TowerElec1.png)
+ 
+ ### Stats By Level Tower :
+ - Damage : 5 / 10 /20
+ - Price : 20 / 50 / 70
+ ##
+ 
+ TowerMage :
+ 
+ ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/img/Tower/Mage/TowerMage1.png)
+ ### Stats By Level Tower :
+ - Damage : 10 / 20 / 40
+ - Price : 50 / 70 / 90
+ 
  ## Mapping :
 
  ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/Game.png)
