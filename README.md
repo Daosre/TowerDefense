@@ -1,5 +1,5 @@
  # The Last Bastion
- ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/TheLastBastion.png)
+ ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/Accueil.png)
 
  ## 3 waves by level
  Bruno : ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/img/mobs/slime/bruno.gif)
