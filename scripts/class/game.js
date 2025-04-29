@@ -30,6 +30,7 @@ class Game {
     this.menuVictory = document.querySelector("#ending");
     this.buttonRetry = document.querySelector("#retry");
   }
+  //initialization game when button difficult click
   init = () => {
     const initGame = (nbr) => {
       audioTheme.play();
@@ -48,15 +49,19 @@ class Game {
         this.start();
       }
     };
+    //choice difficult easy
     this.easyButton.addEventListener("click", () => {
       initGame(5);
     });
+    //choice difficult normal
     this.normalButton.addEventListener("click", () => {
       initGame(3);
     });
+    //choice difficult hard
     this.hardButton.addEventListener("click", () => {
       initGame(1);
     });
+    //player lose and click on the button Retry
     this.buttonRetry.addEventListener("click", () => {
       if (this.life === 0) {
         this.life = 5;
@@ -75,20 +80,24 @@ class Game {
       }
     });
   };
+  //clear interval mob on the map
   clearMob = () => {
     this.intervalMobs.map((interval) => clearTimeout(interval));
     this.mobExist.map((mob) => mob.resetLevel());
   };
+  //start the game
   start = () => {
     this.terrain = new Ground(this.level, this.store);
     this.terrain.createGround(this.mappingLevel[this.level]);
     this.delay();
   };
+  // display menu victory
   win = () => {
     this.multiPage.style.zIndex = "2";
     this.multiPage.style.opacity = "1";
     this.menuVictory.style.display = "flex";
   };
+  // remove mob tower and change the map
   nextLevel = () => {
     this.level++;
     this.terrain.init();
@@ -102,6 +111,7 @@ class Game {
     this.terrain.createGround(this.mappingLevel[this.level]);
     this.delay();
   };
+  // player lose life
   loseLife = () => {
     if (!this.isDead) {
       this.life--;
@@ -116,6 +126,7 @@ class Game {
       this.hearth.innerText = this.life;
     }
   };
+  // player lose, display menu fail
   gameOver = () => {
     this.multiPage.style.zIndex = "2";
     this.multiPage.style.opacity = "1";
@@ -124,6 +135,7 @@ class Game {
     this.waveNbr = 0;
     this.clearMob();
   };
+  // spawn wave mob
   spawnWave = () => {
     this.mobExist = [];
     for (let i = 1; i < 21; i++) {
@@ -143,6 +155,7 @@ class Game {
       this.intervalMobs.push(mob);
     }
   };
+  // Path of creature
   pathMob = () => {
     const arrayMob = [];
     this.roadMapMob[this.level].map((element) => {
@@ -153,14 +166,17 @@ class Game {
     });
     return arrayMob;
   };
+  // Creature receive damage by tower
   damageMob = (index, damage) => {
     this.mobExist[index].receiveDamage(damage);
   };
+  // when player earn money by mob or by win the map
   earnMoney = (nbr) => {
     this.money += nbr;
     this.wallet = this.money;
     this.store.changeWallet(nbr);
   };
+  // if 20 creatures death end of wave, if 3 wave completed next level
   deathMobs = (index) => {
     this.nbrDeathMob++;
     if (this.nbrDeathMob === 20) {
@@ -179,6 +195,7 @@ class Game {
       }
     }
   };
+  //Timer 10 second
   delay = () => {
     let delay10 = 10;
     this.delayDisplay.classList.add("delay");
@@ -194,7 +211,7 @@ class Game {
     }, 1000);
   };
 }
-
-const startGame = new Game(1);
-
+//create instance of game
+const startGame = new Game();
+//initialization game
 startGame.init();
