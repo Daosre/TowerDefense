@@ -59,4 +59,7 @@
 
  ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/Loose.png)
 
+ Crédits : Rémy & Nicolas
+ Micheal Bay ( Explosion )
+
 
