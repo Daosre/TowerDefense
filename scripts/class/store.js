@@ -31,20 +31,26 @@ class Store extends Game {
     this.towers = [];
     this.caseSelected;
   }
+  //initialization store
   init = () => {
+    //buy arrow tower
     this.buyTurretOne.addEventListener("click", () => {
       this.addTurret(0);
     });
+    //buy elec tower
     this.buyTurretTwo.addEventListener("click", () => {
       this.addTurret(1);
     });
+    //buy mage tower
     this.buyTurretThree.addEventListener("click", () => {
       this.addTurret(2);
     });
   };
+  //When the level is reset, clear detection and attack mob
   clearTower = () => {
     this.towers.map((tower) => tower.resetLevel());
   };
+  // When the tower is buy, show upgrade tower
   showUpgradeTower = (data, turret) => {
     this.articleUpgrade.remove();
     this.articleUpgrade = document.createElement("article");
@@ -76,10 +82,12 @@ class Store extends Game {
     this.articleUpgrade.appendChild(btnUpgrade);
     this.sectionStore.appendChild(this.articleUpgrade);
   };
+  //Change the money when player earn money or level is reset
   changeWallet = (nbr) => {
     this.money += nbr ? nbr : 0;
     this.wallet.innerText = String(this.money);
   };
+  //Select a case by the player
   handleSelect = (caseName) => {
     this.caseSelected = caseName;
     if (!caseName.classList.contains("turret")) {
@@ -101,18 +109,20 @@ class Store extends Game {
       this.hiddenTurretLevelOne();
     }
   };
+  //show tower level 1
   showTurretLevelOne = () => {
     this.articleTurretOne.style.display = "flex";
     this.articleTurretTwo.style.display = "flex";
     this.articleTurretThree.style.display = "flex";
     this.articleUpgrade.style.display = "none";
   };
+  // hide tower level 1
   hiddenTurretLevelOne = () => {
     this.articleTurretOne.style.display = "none";
     this.articleTurretTwo.style.display = "none";
     this.articleTurretThree.style.display = "none";
   };
-  showTurretLevelTwo = () => {};
+  // when player buy a tower
   addTurret = (nbr) => {
     if (!this.caseSelected.classList.contains("turret")) {
       switch (nbr) {
@@ -186,13 +196,14 @@ class Store extends Game {
       }
     }
   };
+  // when player earn money or reset level change the wallet
   earnMoney = (nbr) => {
     this.money += nbr;
     this.changeWallet();
   };
+  //reset the wallet
   resetMoney = () => {
     this.money = Number(this.moneyByLevel[this.level]);
     this.changeWallet(0);
   };
 }
-// plop.selected();

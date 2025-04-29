@@ -1,3 +1,4 @@
+//asset monster by wave
 const assetMonster = [
   //Slime
   [
@@ -19,7 +20,9 @@ const assetMonster = [
   ],
   ["assets/img/mobs/slime/pouleto.gif"],
 ];
+//name monster by level
 const nameMonster = ["slime", "bat", "moder"];
+//stats monster by wave by level
 const statsMonster = [
   [
     { life: 10, gold: 5 },
@@ -37,4 +40,5 @@ const statsMonster = [
     { life: 160, gold: 11 },
   ],
 ];
+//start money by level
 startingMoney = [100, 150, 200];

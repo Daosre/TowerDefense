@@ -1,3 +1,5 @@
+// add class by case element road, three rock ...
+// if case name is not in the array case is free
 function addClassByElement(array, word, caseName, elementCase) {
   let isFree = true;
   array.map((element) => {
@@ -20,13 +22,15 @@ class Ground extends Game {
     this.freeCaseImage = [assetFreeCaseLevelOne, assetFreeCaseLevelTwo, assetFreeCaseLevelThree];
     this.reset = document.querySelector("#next");
   }
+  //initialization ground
   init = () => {
     this.resetMap();
   };
+  //reset map of the game
   resetMap = () => {
     this.ground.replaceChildren();
   };
-
+  //create ground
   createGround = (mapping) => {
     //row
     for (let x = 0; x < 12; x++) {
@@ -69,12 +73,14 @@ class Ground extends Game {
       }
     }
   };
+  //Generate case grass random
   randomGrass = () => {
     const randomNbr = Math.round(
       Math.random() * (this.freeCaseImage[this.level].length - 1 - 0) + 0
     );
     return this.freeCaseImage[this.level][randomNbr];
   };
+  //Generate case block random (three rock lava water)
   randomBlockCase = () => {
     const randomNbr = Math.round(Math.random() * (assetBlockCaseLevelThree.length - 1 - 0) + 0);
     return assetBlockCaseLevelThree[randomNbr];

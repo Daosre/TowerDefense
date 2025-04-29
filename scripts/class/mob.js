@@ -20,6 +20,7 @@ class Mob extends Ground {
     this.intervalMove;
     this.isDeath = false;
   }
+  //spawn mob 
   spawn = () => {
     this.createMob.classList.add(`${this.name}${this.index}`, this.name, "moveTransition");
     if (this.name === "slime") {
@@ -33,6 +34,7 @@ class Mob extends Ground {
     this.initPosition();
     this.move();
   };
+  //initialization position start of the mob
   initPosition = () => {
     // initialialiser les position etc
     this.positionMob = document.querySelector(`.${this.name}${this.index}`);
@@ -59,6 +61,7 @@ class Mob extends Ground {
     this.positionStartX = this.positionMob.getBoundingClientRect().left;
     this.positionStartY = this.positionMob.getBoundingClientRect().top;
   };
+  //deplacement of the mob
   move = async () => {
     let indexRoadMapMob = 0;
     this.intervalMove = setInterval(() => {
@@ -124,6 +127,7 @@ class Mob extends Ground {
       }
     }, 1000);
   };
+  //when mob receive damage if life <= 0 mob death
   receiveDamage = (damage) => {
     this.health -= damage;
     this.life.style.width = this.health + "px";
@@ -131,9 +135,11 @@ class Mob extends Ground {
       this.death();
     }
   };
+  //when the level is reset, clear interval move mob
   resetLevel = () => {
     clearInterval(this.intervalMove);
   };
+  // when mob death earn money, remove mob, clear interval move
   death = () => {
     this.positionMob.style.backgroundImage = "url('assets/img/textureObjet/bomba.gif')";
     setTimeout(() => {
