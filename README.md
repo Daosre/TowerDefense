@@ -47,6 +47,11 @@
 
  ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/Game.png)
 
+ ## How to play ?
+ Click on free case and buy a tower in the store.
+ 
+ / ! \ Be careful check your money / ! \
+
  ## Store :
  
  ![The Last Bastion](https://github.com/Daosre/TowerDefense/blob/main/assets/readme/Store.png)
