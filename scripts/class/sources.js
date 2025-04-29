@@ -6,7 +6,7 @@ const assetMonster = [
     "../../assets/img/mobs/slime/yellowSlime.gif",
     "../../assets/img/mobs/slime/redSlime.gif",
   ],
-  //Gobelin
+  //Bat
   [
     "../../assets/img/mobs/bat/bruceLeft.gif",
     "../../assets/img/mobs/bat/bruceLeft.gif",
