@@ -14,20 +14,25 @@ class Tower {
     this.assetAttackMage = "assets/img/projectile/projectileMage.png";
     this.assetAttackArrow = "assets/img/projectile/projectileArrow.png";
   }
+  //When tower is upgrade change tower appearance
   changeTower = () => {
     this.apparenceTower.classList.add(this.asset + this.levelTower);
   };
+  // return information of tower
   whatLevel = () => {
     return { level: this.levelTower, asset: this.asset, price: this.price };
   };
+  //when user buy tower spawn a tower
   spawnTower = () => {
     buyTower.addEventListener("click", () => {
       this.newTower.src = "../assets/img/Tower/Mage/TowerMage1.png";
     });
   };
+  //clear interval attack of the tower
   resetLevel = () => {
     clearInterval(this.intervalTower);
   };
+  //create a tower
   create = () => {
     this.caseName.classList.add("turret", `tower${this.index}`, this.type + this.levelTower);
     this.apparenceTower = document.createElement("div");
@@ -35,6 +40,7 @@ class Tower {
     this.caseName.appendChild(this.apparenceTower);
     this.detectMob();
   };
+  //upgrade tower
   upgrade = () => {
     this.price += 20;
     if (this.damage === 1) {
@@ -48,6 +54,7 @@ class Tower {
     }
     this.changeTower();
   };
+  //detection creature if creature is in the range tower attack
   detectMob = () => {
     this.intervalTower = setInterval(() => {
       const boundingTower = this.caseName.getBoundingClientRect();
@@ -74,9 +81,11 @@ class Tower {
       }
     }, 2000);
   };
+  //attack creature
   attack = (index) => {
     startGame.damageMob(index - 1, this.damage);
   };
+  // attack animation
   attackAnimation = (boundingTower, boundingMob) => {
     const imageAttack = document.createElement("img");
     imageAttack.classList.add("attackAnimation");
@@ -92,6 +101,7 @@ class Tower {
         break;
     }
   };
+  // attack animation by arrow tower
   attackArrow = (boundingTower, boundingMob, image) => {
     image.style.top = boundingTower.top + 25 + "px";
     image.style.left = boundingTower.left + 25 + "px";
@@ -107,6 +117,7 @@ class Tower {
       image.remove();
     }, 300);
   };
+  // attack animation by mage tower
   attackMage = (boundingTower, boundingMob, image) => {
     image.style.top = boundingTower.top + "px";
     image.style.left = boundingTower.left + "px";
@@ -121,6 +132,7 @@ class Tower {
       image.remove();
     }, 300);
   };
+  // attack animation by elec tower
   attackElec = (boundingMob, image) => {
     image.style.top = boundingMob.top + "px";
     image.style.left = boundingMob.left - 4 + "px";
@@ -131,6 +143,3 @@ class Tower {
     }, 300);
   };
 }
-
-// let towerMage = new Tower(10, 20, 2);
-// towerMage.spawnTower();
